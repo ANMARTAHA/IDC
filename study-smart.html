@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light"><head><meta charset="utf-8">
+<meta name="color-scheme" content="light"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Study Smart — Inorganic Pharmaceutical Chemistry</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f4f6f9;--card:#fff;--tx:#1b2430;--mu:#667085;--ac:#c8102e;--nv:#0f2a5f;--bd:#e3e7ee}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10151d;--card:#18202b;--tx:#e8ecf2;--mu:#98a2b3;--ac:#ff5a6e;--nv:#8fb0ff;--bd:#2a3442}}
+:root[data-theme="dark"]{--bg:#10151d;--card:#18202b;--tx:#e8ecf2;--mu:#98a2b3;--ac:#ff5a6e;--nv:#8fb0ff;--bd:#2a3442}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 Georgia,'Times New Roman',serif}
+header{display:flex;gap:8px;align-items:center;padding:10px 14px;background:var(--card);border-bottom:1px solid var(--bd);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+header b{font:700 17px system-ui,sans-serif}
+.tabs{display:flex;gap:6px;overflow-x:auto;flex:1}
+button{font:600 13px system-ui,sans-serif;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:7px 12px;border-radius:8px;cursor:pointer;white-space:nowrap}
+button.on{background:var(--nv);color:var(--bg);border-color:var(--nv)}
+button.ac{background:var(--ac);color:#fff;border-color:var(--ac)}
+.wrap{display:flex;gap:14px;padding:14px;max-width:1150px;margin:auto}
+nav{width:200px;flex:none;display:flex;flex-direction:column;gap:4px}
+nav button{text-align:left;overflow:hidden;text-overflow:ellipsis}
+main{flex:1;min-width:0}
+.pg{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:22px 24px;min-height:360px;overflow-x:auto}
+.pg h2{color:var(--ac);margin:0 0 12px;font-size:25px}
+.pg h3{color:var(--nv);margin:14px 0 6px;font-size:18px}
+.pg .r{color:var(--ac);font-weight:700}
+.pg .n{color:var(--nv);font-weight:700}
+.pg .box{background:var(--bg);border-left:4px solid var(--ac);padding:8px 12px;border-radius:6px;margin:10px 0}
+.pg .ctr{text-align:center}
+.pg table{border-collapse:collapse;width:100%;font-size:15px}
+.pg td,.pg th{border:1px solid var(--bd);padding:6px 10px;text-align:left}
+.pg th{background:var(--bg);color:var(--nv)}
+.pg svg{max-width:100%;height:auto;display:block;margin:8px auto}
+.pg svg text{fill:var(--tx);font:14px system-ui,sans-serif}
+.pg svg line,.pg svg path{stroke:var(--tx);stroke-width:2;fill:none}
+.ptw{display:grid;grid-template-columns:repeat(18,minmax(26px,1fr));gap:2px;min-width:560px}
+.c{font:600 11px/1.15 system-ui,sans-serif;text-align:center;padding:2px 0;border-radius:3px;color:#111;background:#eee}
+.c small{font-weight:400;font-size:8px;display:block}
+.alk{background:#f9d6a5}.ae{background:#f5b95f}.tm{background:#c9b8ee}.om{background:#f8c8d4}.nm{background:#f2a28c}.hal{background:#8fd1a8}.nob{background:#fff;border:1px solid #99a}.rare{background:#e4ec9c}.act{background:#a9dcf5}
+.s{background:#9fe39a}.p{background:#ffb347}.d{background:#9fdcf5}.f{background:#f594b0}
+.dim{opacity:.3}
+.lg{display:flex;flex-wrap:wrap;gap:8px;font:12px system-ui,sans-serif;margin:8px 0}
+.lg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:-2px}
+.edit .pg{outline:2px dashed var(--ac);outline-offset:3px}
+.tx{cursor:pointer;border-radius:4px;transition:background .15s}
+.tx:hover{background:rgba(127,127,127,.12)}
+.tx.ar{font-family:'Segoe UI',Tahoma,'Noto Naskh Arabic','Noto Sans Arabic',system-ui,sans-serif;line-height:1.9}
+.tx.ar:not(.ctr){text-align:right}
+li.tx.ar{list-style-position:inside}
+.bar{display:flex;gap:8px;margin-top:12px;align-items:center;flex-wrap:wrap}
+.bar span{color:var(--mu);font:13px system-ui,sans-serif;margin:0 auto}
+.empty{color:var(--mu);text-align:center;padding:60px 10px;font-family:system-ui,sans-serif}
+@media(max-width:700px){.wrap{flex-direction:column}nav{width:100%;flex-direction:row;overflow-x:auto}.pg{padding:16px}.pg h2{font-size:21px}}
+:root{--bg:#f6f1e3;--card:#fffdf7;--tx:#26303f;--mu:#6b7280;--ac:#b8322a;--nv:#1f3a6e;--bd:#ddd3b8}
+body{background-image:repeating-linear-gradient(transparent 0 29px,rgba(70,110,190,.14) 29px 30px);background-attachment:fixed}
+header{background:var(--nv);color:#fff;border-bottom:4px solid var(--ac)}header b{color:#fff;font:700 21px Georgia,serif;letter-spacing:.5px}
+header button{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)}header button.on{background:#fff7c2;color:#1f3a6e;border-color:#fff7c2}
+.pg{box-shadow:0 2px 0 var(--bd);border-left:6px double var(--ac)}.mu{color:var(--mu);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:14px}
+.card{padding:12px 14px;border-radius:6px;border-top:5px solid;background:var(--bg);display:flex;flex-direction:column;gap:4px;font:14px/1.45 system-ui,sans-serif}.card b{color:var(--nv);font-size:15px}
+.c0{border-color:#e9b949}.c1{border-color:#5aa469}.c2{border-color:#4f8fe0}.c3{border-color:#d86a6a}
+.fcard{min-height:230px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:18px;margin:10px auto;max-width:520px;background:#fff7c2;color:#26303f;border:1px solid #e0cf7a;border-radius:6px;box-shadow:3px 4px 0 #d9c76a;cursor:pointer;font:600 21px/1.4 Georgia,serif}.fcard.fl{background:#dff2e1;border-color:#9fcfa6;box-shadow:3px 4px 0 #9fcfa6}.fcard small{font:12px system-ui,sans-serif;color:#6b7280}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;padding:11px 14px;font-size:15px;white-space:normal}.opt.ok{background:#bfe8c4;border-color:#4a9b57;color:#123}.opt.no{background:#f7c6c2;border-color:#c0392b;color:#321}
+.orb{display:flex;flex-wrap:wrap;gap:6px}.orb span{border:1px solid var(--nv);border-radius:4px;padding:3px 8px;font:13px system-ui,sans-serif;color:var(--tx)}
+.rw{cursor:pointer}.rw:hover{background:rgba(255,230,120,.3)}.hid{color:transparent;background:rgba(127,127,127,.2)}
+.meter{position:relative;display:flex;height:26px;border-radius:6px;overflow:hidden;margin:12px 0}.meter i{display:block;height:100%}.meter u{position:absolute;top:0;width:4px;height:100%;background:#111;text-decoration:none}
+.pg .bar{margin:10px 0}footer{text-align:center;padding:16px;font:13px system-ui,sans-serif;color:var(--mu)}
+:root{--bg:#eef1f6;--card:#fff;--tx:#1d2535;--mu:#5f6b7d;--ac:#9b2335;--nv:#14284b;--bd:#dbe0ea;--gd:#a8802f;--hd:#0f1f3d;--soft:#f5f7fb}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1420;--card:#151e2e;--tx:#e6eaf2;--mu:#9aa5b8;--ac:#ff7b8c;--nv:#a9c0f5;--bd:#26324a;--gd:#d4ad5a;--hd:#0a1220;--soft:#1a2539}}
+:root[data-theme="dark"]{--bg:#0d1420;--card:#151e2e;--tx:#e6eaf2;--mu:#9aa5b8;--ac:#ff7b8c;--nv:#a9c0f5;--bd:#26324a;--gd:#d4ad5a;--hd:#0a1220;--soft:#1a2539}
+body{background:var(--bg);background-image:none;font:17px/1.7 'Newsreader',Georgia,serif}
+header{display:block;padding:0;background:var(--hd);border:0;border-bottom:3px solid var(--gd)}
+.top{display:flex;align-items:center;gap:14px;max-width:1150px;margin:auto;padding:14px 20px 4px}
+.top b{font:600 23px 'Newsreader',Georgia,serif;color:#fff}
+.top span{flex:1;min-width:0;font:13px 'Instrument Sans',system-ui,sans-serif;color:#aab6cf;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+header #th{background:none;color:#d7dff0;border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:5px 14px;font:500 12px 'Instrument Sans',system-ui,sans-serif}
+.tabs{max-width:1150px;margin:auto;padding:0 12px;gap:0}
+.tabs button{background:none;border:0;border-bottom:3px solid transparent;border-radius:0;color:#b4c0d9;padding:10px 14px;font:500 14px 'Instrument Sans',system-ui,sans-serif}
+.tabs button.on{background:none;color:#fff;border-bottom-color:var(--gd)}
+.wrap{gap:28px;padding:24px 20px}
+nav{width:220px;gap:2px;position:sticky;top:112px;align-self:flex-start;max-height:calc(100vh - 130px);overflow-y:auto}
+nav button{background:none;border:0;border-left:3px solid var(--bd);border-radius:0;padding:8px 12px;color:var(--mu);font:500 13.5px/1.35 'Instrument Sans',system-ui,sans-serif;white-space:normal;overflow:visible}
+nav button.on{background:var(--soft);color:var(--nv);border-left-color:var(--ac)}
+.pg{min-height:420px;padding:34px 38px;border:1px solid var(--bd);border-top:3px solid var(--gd);border-radius:3px;box-shadow:0 1px 2px rgba(15,31,61,.06),0 10px 28px rgba(15,31,61,.05)}
+.pg h2{color:var(--nv);font:600 29px/1.25 'Newsreader',Georgia,serif;margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid var(--bd)}
+.pg h2:only-child{border:0}
+.pg h3{color:var(--nv);font:600 19px/1.3 'Newsreader',Georgia,serif;margin:20px 0 8px}
+.pg .r{color:var(--ac);font-weight:600}.pg .n{color:var(--nv)}
+.pg .box{background:var(--soft);border-left:3px solid var(--gd);border-radius:2px;padding:12px 16px}
+.pg ul,.pg ol{padding-left:22px}.pg li{margin:6px 0}
+.pg th{background:var(--hd);color:#fff;font:600 13px 'Instrument Sans',system-ui,sans-serif}
+.pg td,.pg th{border:0;border-bottom:1px solid var(--bd);padding:10px 12px}
+.pg tr:nth-child(even) td{background:var(--soft)}
+.card{border:1px solid var(--bd);border-top:3px solid var(--gd);border-radius:3px;background:var(--card);padding:14px 16px}
+.card b{font:600 16px 'Newsreader',Georgia,serif;color:var(--nv)}
+.fcard{background:var(--card);color:var(--tx);border:1px solid var(--bd);border-top:3px solid var(--gd);border-radius:3px;box-shadow:0 8px 24px rgba(15,31,61,.08);font:500 23px/1.4 'Newsreader',Georgia,serif}
+.fcard.fl{background:var(--soft);border-top-color:var(--ac);box-shadow:0 8px 24px rgba(15,31,61,.08)}
+.bar button{border-radius:3px;font-family:'Instrument Sans',system-ui,sans-serif}
+button.ac{background:var(--hd);border-color:var(--hd)}
+footer{max-width:1110px;margin:8px auto 0;border-top:1px solid var(--bd);font-family:'Instrument Sans',system-ui,sans-serif}
+@media(max-width:700px){.top{padding:12px 14px 2px}.top b{font-size:20px}.wrap{padding:14px 12px}nav{position:static;max-height:none;width:100%;flex-direction:row}nav button{border-left:0;border-bottom:3px solid var(--bd);white-space:nowrap}nav button.on{border-bottom-color:var(--ac)}.pg{padding:22px 18px}.pg h2{font-size:23px}}
+.cr{background:#0a1220;color:#d7dff0;text-align:center;font:13px 'Instrument Sans',system-ui,sans-serif;padding:7px 10px}.cr a,footer a{color:var(--gd);text-decoration:none;font-weight:600}.cr a:hover,footer a:hover{text-decoration:underline}
+</style></head><body>
+<div class="cr">© 2026 Anmar Taha. All rights reserved. · Telegram: <a href="https://t.me/AnmarTaha" target="_blank" rel="noopener">@AnmarTaha</a> · Instagram: <a href="https://instagram.com/a.za18" target="_blank" rel="noopener">a.za18</a></div>
+<header><div class="top"><b>Study Smart</b><span>Inorganic Pharmaceutical Chemistry · 3rd stage</span></div><div class="tabs" id="tabs"></div></header>
+
+<div class="wrap"><nav id="nav"></nav><main id="main"></main></div>
+<script>
+function pt(mode){
+var R=["H He","Li Be B C N O F Ne","Na Mg Al Si P S Cl Ar","K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr","Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe","Cs Ba La Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn","Fr Ra Ac Rf Db Sg Bh Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og"];
+var Z=[1,3,11,19,37,55,87],h="",NM="B C N O Si P S As Se Te".split(" ");
+function cell(r,c,s,z,k){h+="<div class='c "+k+"' style='grid-row:"+r+";grid-column:"+c+"'><small>"+z+"</small>"+s+"</div>"}
+function cls(c,s,z,f){
+if(mode=="b"){if(f)return"f";if(c<=2||z==2)return"s";if(c>=13)return"p";return"d"}
+var k;if(f==1)k="rare";else if(f==2)k="act";else if(z==1)k="nm";else if(c==1)k="alk";else if(c==2)k="ae";else if(c>=3&&c<=12)k=(z==21||z==39||z==57)?"rare":z==89?"act":"tm";else if(c==17)k="hal";else if(c==18)k="nob";else k=NM.indexOf(s)>=0?"nm":"om";
+if(mode=="a"&&k!="alk")k+=" dim";return k}
+R.forEach(function(row,i){var a=row.split(" "),z=Z[i],cols=i==0?[1,18]:i<3?[1,2,13,14,15,16,17,18]:null;
+a.forEach(function(s,j){var c=cols?cols[j]:j+1;if(i>=5&&j==3)z+=14;cell(i+1,c,s,z,cls(c,s,z,0));z++})});
+"Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu".split(" ").forEach(function(s,j){cell(9,j+3,s,58+j,cls(0,s,58+j,1))});
+"Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr".split(" ").forEach(function(s,j){cell(10,j+3,s,90+j,cls(0,s,90+j,2))});
+var lg=mode=="b"?"<span><i class=s></i>s-block</span><span><i class=p></i>p-block</span><span><i class=d></i>d-block</span><span><i class=f></i>f-block</span>":"<span><i class=alk></i>Alkali metals</span><span><i class=ae></i>Alkaline-earth</span><span><i class=tm></i>Transition</span><span><i class=om></i>Other metals</span><span><i class=nm></i>Other nonmetals</span><span><i class=hal></i>Halogens</span><span><i class=nob></i>Noble gases</span><span><i class=rare></i>Rare-earth/lanthanoid</span><span><i class=act></i>Actinoid</span>";
+return"<div style='overflow-x:auto'><div class=ptw>"+h+"</div></div><div class=lg>"+lg+"</div><p style='font-size:12px;color:var(--mu)'>Group numbering: IUPAC. Based on the Encyclopaedia Britannica periodic table.</p>"}
+function bic(c){return"<svg viewBox='0 0 220 90' width='220'><line x1=100 y1=40 x2=100 y2=14 /><line x1=106 y1=40 x2=106 y2=14 /><text x=96 y=11>O</text><line x1=100 y1=40 x2=66 y2=58 /><text x=40 y=68>HO</text><line x1=100 y1=40 x2=134 y2=58 /><text x=134 y=70>O⁻</text><text x=170 y=70>"+c+"⁺</text></svg>"}
+function cit(c){return"<svg viewBox='0 0 300 160' width='300'><line x1=150 y1=60 x2=150 y2=32 /><text x=138 y=24>OH</text><path d='M150 60L115 80L85 62'/><line x1=85 y1=62 x2=85 y2=36 /><line x1=91 y1=62 x2=91 y2=36 /><text x=82 y=30>O</text><line x1=85 y1=62 x2=60 y2=78 /><text x=44 y=92>O⁻</text><text x=14 y=84>"+c+"⁺</text><path d='M150 60L185 80L215 62'/><line x1=215 y1=62 x2=215 y2=36 /><line x1=209 y1=62 x2=209 y2=36 /><text x=206 y=30>O</text><line x1=215 y1=62 x2=240 y2=78 /><text x=238 y=92>O⁻</text><text x=266 y=84>"+c+"⁺</text><line x1=150 y1=60 x2=150 y2=100 /><line x1=150 y1=100 x2=178 y2=116 /><line x1=147 y1=104 x2=175 y2=120 /><text x=180 y=126>O</text><line x1=150 y1=100 x2=122 y2=116 /><text x=100 y=130>O⁻</text><text x=134 y=152>"+c+"⁺</text></svg>"}
+var atom="<svg viewBox='0 0 300 200' width='300'><circle cx=130 cy=100 r=85 style='stroke-width:1.5'/><circle cx=105 cy=100 r=30 style='stroke-dasharray:4 3;stroke-width:1'/><circle cx=95 cy=94 r=14 fill='#3aa0e0' style='stroke:none'/><text x=88 y=99 style='fill:#fff'>p⁺</text><circle cx=118 cy=110 r=14 fill='#e0574a' style='stroke:none'/><text x=111 y=115 style='fill:#fff'>n⁰</text><circle cx=205 cy=42 r=13 fill='#4caf50' style='stroke:none'/><text x=197 y=47 style='fill:#fff'>e⁻</text><text x=212 y=30>electron</text><text x=5 y=40>nucleus</text><text x=5 y=98>proton</text><text x=5 y=175>neutron</text><text x=210 y=170>K shell</text></svg>";
+var tt="Inorganic Pharmaceutical Chemistry";
+var L=[
+{t:"Title",h:"<h2 style='font-size:32px;text-align:center;margin-top:60px'>"+tt+"</h2><p class=ctr><b class=n>3rd stage<br>1st semester / 2025-2026</b></p>"},
+{t:"Introduction (divider)",h:"<h2 style='font-size:40px;text-align:center;margin-top:110px;color:var(--nv)'>Introduction</h2>"},
+{t:"Inorganic chemistry",h:"<h2>Inorganic chemistry</h2><p>is the study of all the elements and their compounds except carbon and its compounds (which is studied under organic chemistry).</p><p>The term <span class=r>‘Pharmaceutical’</span> is used for any chemical substance useful in preventive or therapeutic or which finds use in the preparation of medicament. Some find use only in the laboratory during the preparation but may not be present in the final product; these are also incorporated under pharmaceuticals.</p>"},
+{t:"Importance of inorganic pharmaceuticals",h:"<h2>Importance of Inorganic Pharmaceuticals</h2><p>Inorganic pharmaceuticals are useful in any of the following ways:</p><ul><li><b>Useful medicinally for their therapeutic purpose.</b> Example: Astringents and antimicrobials etc.</li><li><b>Useful as pharmaceutical aids.</b> Example: Bentonite, talc etc.</li><li><b>To change the reaction of body fluid. To acidify or alkalis.</b> Example: Antacids, alkalis, mineral acids.</li><li><b>Replacing or replenishing the normal content of body fluids.</b> Example: Sodium, potassium, calcium, chloride, phosphate etc.</li><li><b>Useful as reagents to carry out the reactions.</b> Example: Catalysts (platinum, nickel) oxidizing and reducing agents (lithium aluminum hydride).</li><li><b>Useful in Pharmaceutical analysis.</b> Example: Titrants such as potassium permanganate.</li></ul>"},
+{t:"Atomic structure",h:"<h2>Atomic Structure</h2><p>The particles that make up an atom are called <b>subatomic particles</b> (sub- means “smaller size”). Atom composed of a central <span class=r><i>nucleus</i></span> surrounded by <span class=r><i>orbitals</i></span> which occupy discrete regions of space.</p><p>1. <i>Nucleus:</i> most of the mass of atom<br>&nbsp;&nbsp;➢ <i>Protons:</i> has positive charge.<br>&nbsp;&nbsp;➢ <i>Neutrons:</i> uncharged.</p><p>2. <i>Orbitals:</i><br>&nbsp;&nbsp;➢ <i>Electrons:</i> found in electron cloud, has negative charge.</p>"+atom},
+{t:"The nucleus",h:"<h2>The nucleus</h2><p>The nucleus is at the center of the atom and contains <i>protons</i> and <i>neutrons</i>. Protons and neutrons are collectively known as <i>nucleons</i>.</p><p>Virtually all the mass of the atom is concentrated in the nucleus, because the electrons weigh so little.</p><div class='box ctr'><span class=r>No. of protons = Atomic number of the atom<br>No. of protons + No. of neutrons = Mass number of the atom</span></div><p class=r>Note: Mass number is also called the nucleon number</p><p>This information can be given simply in the form:</p><p class=ctr style='font-size:30px'><sup style='font-size:16px'>19 (Mass number)</sup><br><b>F</b><br><sub style='font-size:16px'>9 (Atomic number)</sub></p>"},
+{t:"The electrons",h:"<h2>The electrons</h2><p>Atoms are electrically neutral, and the positiveness of the protons is balanced by the negativeness of the electrons. It follows that in a neutral atom:</p><p class='ctr r'>No. of electrons = No. of protons</p><p>So, if an oxygen atom (atomic number = 8) has 8 protons, it must also have 8 electrons; if a chlorine atom (atomic number = 17) has 17 protons, it must also have 17 electrons.</p>"},
+{t:"Electronic configuration",h:"<h2>Electronic Configuration</h2><ul><li>Every element has different electronic configuration.</li><li>The number of protons determines the identity of the element.</li><li>The number of electrons determines the charge.</li><li>The number of neutrons determines the isotope.</li><li>All chemistry done at the electronic level (that is why electrons are very important).</li><li><b>Electronic configuration</b> is the arrangement of electrons in an atom. These electrons fill the atomic orbitals.</li></ul>"},
+{t:"Aufbau principle",h:"<h2 style='color:var(--nv)'>How to write Electron configuration using Aufbau Principle</h2><h3>Diagonal rule (Aufbau Principle)</h3><p><b class=r>Max electrons: (s) = 2 · (p) = 6 · (d) = 10 · (f) = 14</b></p><table><tr><td>1s</td><td></td><td></td><td></td></tr><tr><td>2s</td><td>2p</td><td></td><td></td></tr><tr><td>3s</td><td>3p</td><td>3d</td><td></td></tr><tr><td>4s</td><td>4p</td><td>4d</td><td>4f</td></tr><tr><td>5s</td><td>5p</td><td>5d</td><td>5f</td></tr><tr><td>6s</td><td>6p</td><td>6d</td><td></td></tr><tr><td>7s</td><td>7p</td><td></td><td></td></tr></table><p style='font-size:13px;color:var(--mu)'>Draw diagonal arrows from top-right to bottom-left through each row.</p><table><tr><th>Element</th><th>Total electrons</th><th>Orbital diagram</th><th>Electron configuration</th></tr><tr><td>H</td><td>1</td><td>1s ↑</td><td>1s¹</td></tr><tr><td>He</td><td>2</td><td>1s ↑↓</td><td>1s²</td></tr><tr><td>Li</td><td>3</td><td>1s ↑↓ · 2s ↑</td><td>1s² 2s¹</td></tr><tr><td>Be</td><td>4</td><td>1s ↑↓ · 2s ↑↓</td><td>1s² 2s²</td></tr><tr><td>B</td><td>5</td><td>1s ↑↓ · 2s ↑↓ · 2p ↑</td><td>1s² 2s² 2p¹</td></tr></table><p class=r>The order in which the orbitals are filled with electrons is: 1s &lt; 2s &lt; 2p &lt; 3s &lt; 3p &lt; 4s &lt; 3d &lt; 4p &lt; 5s &lt; 4d &lt; 5p &lt; 6s &lt; 4f &lt; 5d &lt; 6p &lt; 7s &lt; 5f &lt; 6d &lt; 7p</p>"},
+{t:"Shorthand & valence electrons",h:"<h2>Shorthand &amp; Valence Electrons</h2><ul><li>Electronic configurations can also be written in a <span class=r>shorthand</span> which references the last completed orbital shell (i.e., all orbitals with the same principal quantum number ‘n’ have been filled).</li><li>Ex.: electronic configuration of <b>Na (11)</b> can write as 3s¹, the electronic configuration of <b>Li (3)</b> can write as 2s¹.</li><li>The electrons in the outer shell (beyond the stable core) called the <span class=r>valence electrons</span>.</li><li class=n>Valence Electrons: electrons are the electrons in the last shell or energy level of an atom.</li></ul><table><tr><th>Na (11) Sodium 22.99</th><th>Li (3) Lithium 6.94</th></tr><tr><td>1s² 2s² 2p⁶ <b class=r>3s¹</b></td><td>1s² <b class=r>2s¹</b></td></tr></table><p style='font-size:13px;color:var(--mu)'>s holds up to 2 · p holds up to 6 · d holds up to 10</p>"},
+{t:"Ionization",h:"<h2>Ionization</h2><p>➢ When an atom <b>gains an electron</b> becomes <span class=r>negatively charge</span> (the electrons number more than protons number); called an <span class=r>anion</span>. In the same way nonmetal atoms can gain electrons.</p><p>➢ Metal atoms can <b>lose electrons</b> to become <span class=r>positively charge cations</span>.</p><p class=r>Note: Cations are always smaller than the original atom. Conversely, anions are always larger than the original atom.</p>"},
+{t:"The periodic law",h:"<h2>The Periodic Law</h2><ul><li>A table of this type was suggested independently around 1868-1870 by the Russian chemist Mendelleeff and German chemist Lothar Meyer.</li><li>When elements arranged in order of increasing atomic number, there is a periodic repetition of their physical and chemical properties.</li></ul>"},
+{t:"Periodic table",h:"<h2>Periodic table of the elements</h2>"+pt("")},
+{t:"Alkali metals (outline)",h:"<h2>Alkali Metals</h2><ul><li><b>Lithium (Li), Sodium (Na), Potassium (K):</b> Electron configuration, chemical properties of metals, Advantages and disadvantages using lithium-based drugs.</li><li><b>Sodium as an essential ion in the human body:</b> Drugs, diet and toxicity of sodium ions.</li><li><b>Potassium and its clinical application.</b></li></ul>"+pt("a")},
+{t:"Alkali metals (group 1)",h:"<h2>Alkali Metals</h2><ul><li>Members of group 1 of the periodic table (first vertical column) with exception of hydrogen are called alkali metals.</li><li>In terms of a clinical use, <b>Na</b> and <b>K</b> are essential ions for the human body and any imbalance in them must corrected.</li><li><b>Li</b> (lithium salts) is medically used to treat bipolar disorder (BD).</li></ul>"},
+{t:"Electronic configuration (table)",h:"<h2>Electronic configuration</h2><ul><li>This group of elements belongs to <span class=r>s-block</span> metals as they only have one electron in their outer shell.</li><li>The chemistry of the metals is characterized by the loss of this s electron to form a monocationic ion M⁺.</li></ul><table><tr><th>Atomic number</th><th>Symbol</th><th>Electronic configuration</th></tr><tr><td>3</td><td>Li</td><td>1s²2s¹ (or) [He]2s¹</td></tr><tr><td>11</td><td>Na</td><td>1s²2s²2p⁶3s¹ (or) [Ne]3s¹</td></tr><tr><td>19</td><td>K</td><td>1s²2s²2p⁶3s²3p⁶4s¹ (or) [Ar]4s¹</td></tr><tr><td>37</td><td>Rb</td><td>1s²2s²2p⁶3s²3p⁶3d¹⁰4s²5s¹ (or) [Kr]5s¹</td></tr><tr><td>55</td><td>Cs</td><td>1s²2s²2p⁶3s²3p⁶3d¹⁰4s²4p⁶4d¹⁰5s²5p⁶6s¹ (or) [Xe]6s¹</td></tr><tr><td>87</td><td>Fr</td><td>[Rn]7s¹</td></tr></table>"},
+{t:"s, p, d, f blocks",h:"<h2>Blocks of the periodic table</h2>"+pt("b")+"<p style='font-size:13px;color:var(--mu)'>s-block: 1s–7s · d-block: 3d–6d · p-block: 2p–7p · f-block: 4f, 5f (with 5d, 6d).</p>"},
+{t:"Chemical behavior",h:"<h2>Chemical behavior of alkali metals</h2><ol><li>It have a <b>silvery white appearance</b> except for caesium which is golden yellow.</li><li>They are all <b>soft metals</b> (can be cut with a knife). The softness of the metal increases within the group.</li><li>They are generally <b>very reactive and oxidase in the air</b>. The reactivity increases within the group.</li><li>All alkali metals react violently with water with the formation of the metal hydroxide and hydrogen.</li></ol><div class='box ctr'>2Li(s) + 2H₂O → 2LiOH + H₂(g) ↑</div>"},
+{t:"Pharmaceutical applications",h:"<h2>5. In terms of their pharmaceutical applications,</h2><ul><li>alkali metals are not directly useable mainly due to their reaction behavior in aqueous media. Nevertheless, alkali metal <b>halides</b>, some <b>oxides</b>, <b>carbonates</b>, <b>citrates</b> and other <b>salts</b> are of <b>medicinal interest</b>. <span class=r>NaCl &amp; KCl solutions are important as oral rehydration salts, and KCl can also be used to treat potassium depletion.</span></li><li>The various salts of <b>sodium, lithium and potassium</b> have the widest use and are discussed in detail in the following sections. These applications range from the use of <b>sodium &amp; potassium salts</b> used in treatment <span class=r>dehydration and restore mineral balances</span>, where <b>lithium salts</b> used in treatment of <span class=r>BD</span>.</li></ul>"},
+{t:"Li: advantages",h:"<h2>👍 Advantages of using Li based drugs</h2><ul><li>In 1880, Lithium salts used as prophylaxis and treatment of <b>mania</b>, and as prophylaxis in <b>bipolar disorder (BD) &amp; recurrent depression</b>.</li><li>Its taken orally, usually as <b>lithium carbonate Li₂CO₃</b> or <b>lithium citrate [Li₃C₃H₅O(COO)₃]</b>, with a total dose of up to <b>30 mmol/day</b>.</li><li><b>Li₂CO₃</b> is the preferred lithium salt used, as it causes the least irritation to the stomach.</li></ul>"},
+{t:"Li: disadvantages (1)",h:"<h2>👎 Disadvantages of using Li based drugs</h2><ul><li>It has a very narrow therapeutic index window (monitoring of blood levels essential during the treatment).</li><li>✓ if <b>Li⁺ blood plasma concentrations more than 1.5 mmol/l</b> it may cause toxic effects, usually <span class=r>tremors in the fingers, renal impairment and convulsion. Also, memory problems are a very common side effect, and complaints about slowed mental ability and forgetfulness are commonly reported.</span></li><li>✓ <b>Extreme doses</b> can cause <span class=r>nausea and diarrhea.</span></li><li>✓ <b>Doses above 2 mmol/l</b> require <span class=r>emergency treatment (fatal).</span></li></ul>"},
+{t:"Li: disadvantages (2)",h:"<h2>👎 Disadvantages (continued)</h2><ul><li><b>Weight gain &amp; decreased thyroid levels.</b></li><li>Lithium salts can lead to <b>diabetes insipidus</b><br>✓ Polyuria; excess production of urine, due to the damage of internal kidneys structures.</li><li><b>Drug-drug interaction:</b><br>✓ With nonsteroidal anti-inflammatory drugs (NSAIDs) by reducing lithium clearance by kidneys, leading to lithium toxicity.<br>✓ Furthermore, the concurrent use of diuretics, which can result in sodium depletion, can make lithium toxicity worse and can be hazardous.</li></ul>"},
+{t:"Sodium: roles (1)",h:"<h2>Sodium as an essential ion in the human body</h2><h3>The main biological roles of sodium ions are:</h3><h3 class=r>1. Maintenance of body fluids in humans.</h3><ul><li><b>Sodium</b> is an essential mineral for the human body and crucial for the regulation of the body fluid via its osmosis activity.</li><li>Its account for over 90% of all ions in the plasma and in the interstitial fluid, and <b>It is the most abundant cation in the extracellular fluid</b> (Na⁺ content controls the extracellular volume).</li></ul><p>* In particular, the <span class=r>kidneys</span> play an important role in regulating the fluid level of the body as well as the filtration, secretion and re-absorption of Na⁺ in the nephrons, the functional unit of the kidney.</p>"},
+{t:"Sodium: roles (2)",h:"<h3 class=r style='font-size:20px'>2. Neurons &amp; transmission of nerve impulses.</h3><ul><li>In the human body, <span class=r>Na⁺</span> is often used to actively build up an electrostatic potential across membranes, with potassium ions <span class=r>K⁺</span> being the counter-ion. The build-up of an electrostatic potential across cell membranes is important to allow the transmission of nerve impulses.</li></ul><h3 class=r style='font-size:20px'>3. Play a crucial role in the contraction of muscles and in the mode of action of several enzymes.</h3><ul><li><span class=r>Na⁺</span> used in the human body <b>to establish osmotic gradients</b>, which in turn is crucial to control the water balance. Furthermore, decreases in blood pressure and in Na⁺ concentrations are sensed by the kidneys, and hormones (e.g. renin, antidiuretic hormones (ADHs), atrial natriuretic peptide) are released that control the blood pressure, osmotic balances and water-retaining mechanisms.</li></ul>"},
+{t:"Drugs, diet and toxicity",h:"<h2>Drugs, diet and toxicity</h2><p><span class=r>Sodium chloride solutions</span> are normally used when the patient is diagnosed with sodium depletion and dehydration. Treatment is mostly administered intravenously, but in chronic conditions (mild to moderate sodium loss) <span class=r>sodium chloride</span> or <span class=r>sodium bicarbonate</span> can be given orally. Oral rehydration therapies usually use a mixture of alkali metal-based salts such as <b>NaCl, KCl</b> and their <b>citrates</b>.</p><table><tr><td class=ctr style='font-size:22px'><b>(a) NaCl</b></td><td class=ctr>(b)"+bic("Na")+"</td><td class=ctr>(c)"+cit("Na")+"</td></tr></table><p class=ctr style='font-size:13px'><i>Chemical structures of (a) sodium chloride, (b) sodium bicarbonate and (c) sodium citrate</i></p>"},
+{t:"Sodium bicarbonate",h:"<h2 class=r>Sodium bicarbonate</h2><p>is usually administered orally to regulate the serum pH.</p><ul><li><b>Imbalances of the plasma pH can be due to problems occurring in the kidneys</b> such as <b>renal tubular acidosis</b> (medical condition that occurs when body accumulate acid due to kidneys failing to regulate the pH of the urine and the blood plasma).</li><li><span class=r>In renal tubular acidosis</span>, the kidneys <b>either</b> <span class=r>fail to filter or secrete acid ions (H⁺) from the plasma</span> (secretion takes place in the distal tubule), or to recover bicarbonate ions (HCO₃⁻) from the filtrate (passive re-absorption takes place in the proximal tubule, active re-absorption at the distal tubule), which is necessary to balance the pH.</li><li>In the view of this mode of action, <b>the pharmaceutically active component of sodium bicarbonate</b> is the <span class=r>bicarbonate anion</span>, but the <span class=r>cation Na⁺ is responsible for solubility and compatibility.</span></li></ul>"},
+{t:"Diet & toxicity of NaCl",h:"<h2>Dietary NaCl and toxicity</h2><ul><li><span class=r>The most common dietary source of NaCl is table salt;</span> daily recommended NaCl intake is recommended to be limited to 6 g for adults, whereas intake for children should be significantly lower.</li><li>Low sodium plasma levels <span class=r>(hyponatremia)</span>, which can be a result of <span class=r>dysfunction kidneys</span> or <span class=r>sodium loss in the bowels</span>, also cause damage to the human body via osmotic imbalances and if necessary, must be treated. Low blood pressure, dehydration and muscle cramps are signs of a sodium deficiency.</li><li>The high salt plasma levels <span class=r>(hypernatremia)</span> can result in cardiovascular disorders such as hypertension.</li><li>Signs of acute toxicity may be seen after ingestion of 500–1000 mg/kg body weight NaCl. <span class=r>Symptoms:</span> vomiting, ulceration of the gastrointestinal (GI) tract and renal damage, also increased risk of kidney stones formation is believed to be a result of high salt intake.</li></ul>"},
+{t:"Potassium",h:"<h2>Potassium and its clinical application</h2><ul><li>In the human body, 95% of the K⁺ can be found inside the cells, with the remaining 5% mainly circulating in the blood plasma. This balance is carefully maintained by the Na⁺/K⁺ pump, and imbalances, such as seen in hypo or Hyperkalaemia, can have serious consequences.</li></ul><p class=ctr style='font-size:13px'>19 · K · Potassium · 39.098</p>"},
+{t:"Hypokalemia",h:"<h2>Hypokalemia</h2><p class=r style='font-size:19px'>Is a potentially serious condition where the patient has low levels of K⁺ in blood plasma.</p><ul><li><span class=r>Symptoms:</span> weakness of the muscles or ECG (electrocardiogram) abnormalities.</li><li>It may result due to <span class=r>reduced K⁺ intake caused by GI disturbance</span>, such as <b>diarrhea</b> and <b>vomiting</b>, or <span class=r>increased excretion of K⁺ caused by diuresis</span>; (patients treated with diuretics such as <span class=r>loop diuretics &amp; thiazides</span>. These classes of drugs increase the secretion of Na⁺ in the nephrons to increase water excretion. Unfortunately, they also increase the excretion of K⁺ and lead to hypokalemia. <span class=r>In contrast</span>, potassium-sparing diuretics actively preserve potassium ions.</li></ul>"},
+{t:"KCl & K bicarbonate",h:"<ul><li><b>Potassium salts are preferably given as liquid preparations (KCl is the preferred salt used).</b> Other potassium-based salts can be used if the patient is at risk of developing hyperchloremia – increased chloride plasma levels.</li><li><b>Oral bicarbonate solutions</b> such as <b>potassium bicarbonate</b> are typically given orally for chronic acidosis states – low pH of the blood plasma. This can be again due to impaired kidney function (The use of potassium bicarbonate for the treatment of acidosis must be carefully evaluated, as even small changes of the potassium plasma levels can have severe consequences).</li></ul>"+bic("K")},
+{t:"Potassium citrate",h:"<ul><li><span class=r>Potassium citrate</span> is used in the United Kingdom as an over-the-counter drug for the relief from <b>discomfort experienced in mild urinary-tract infections</b> by increasing the urinary pH.</li><li>It should be not given to men if:<br>– They experience pain in the kidney area (risk of kidney stones) or if blood or pus is present in the urine.<br>– Also, patients with raised blood pressure or diabetes should avoid taking potassium citrate without consultation with their general practitioner (GP).</li></ul>"+cit("K")},
+{t:"Potassium tablets",h:"<p>❑ <span class=r style='font-size:20px'>Potassium salts</span> are also available in the form of tablets or capsules for oral application especially as nonprescription medicine.</p><ul><li>Usually, their formulation is designed to allow the potassium ions to be slowly secreted, because very high concentrations of K⁺ are known to be toxic to tissue cells and can cause injury to the gastric mucosa.</li><li>Therefore, nonprescription potassium supplement pills are usually restricted to &lt;100 mg of K⁺.</li></ul>"},
+{t:"Hyperkalaemia: toxicity",h:"<h2>Adverse effects and toxicity: Hyperkalaemia</h2><p>❑ The therapeutic window for <b>K⁺</b> in the blood plasma is very small <span class=r>(3.5–5.0 mmol)</span>, and especially Hyperkalaemia, an increased level of K⁺ in the plasma, can lead to severe health problems.</p><p>❑ Potassium salts can cause nausea and vomiting and in extreme cases can lead to small bowel ulcerations.</p><p>❑ Acute severe Hyperkalaemia is defined when the plasma potassium concentration exceeds <span class=r>6.5 mmol/l</span> or <span class=r>if ECG changes are seen.</span> This can lead to <span class=r>cardiac arrest</span>, which needs immediate treatment.</p>"},
+{t:"Hyperkalaemia: treatment",h:"<p>❑ Treatment options include the use of <span class=r>calcium gluconate</span> intravenous injections, which minimizes the effects of Hyperkalaemia on the heart.</p><p>❑ I.V injection of <span class=r>soluble insulin</span> promotes the shift of potassium ions into the cells.</p><p>❑ <span class=r>Diuretics</span> also can be used to increase the secretion of K⁺ in the kidneys, and</p><p>❑ <span class=r>Dialysis</span> can be a good option if urgent treatment is required.</p><p>❑ <span class=r>Ion-exchange resins</span>, such as <span class=r>polystyrene sulfonate resins</span>, may be used in mild to moderate Hyperkalaemia to remove excess potassium if there are no ECG changes present.</p><p>* Especially in patients suffering from kidney diseases or end-stage renal failure, the potassium levels must be monitored very carefully and corrected if necessary. (Cuse build-up of potassium in the blood plasma may trigger a cardiac arrest)</p>"},
+{t:"The end",h:"<h2 style='font-size:48px;text-align:center;margin-top:100px'>the end...</h2>"}
+];
+var AR={"inorganic pharmaceutical chemistry":"الكيمياء الصيدلانية غير العضوية","3rd stage1st semester / 2025-2026by: lecturer sadeq jaafer":"<b class='n'>المرحلة الثالثة<br>الفصل الأول / 2025-2026<br>بواسطة: المدرّس صادق جعفر</b>","introduction":"المقدمة","inorganic chemistry":"الكيمياء غير العضوية","is the study of all the elements and their compounds except carbon and its compounds (whic":"هي دراسة جميع العناصر ومركباتها ما عدا الكربون ومركباته (التي تُدرس ضمن الكيمياء العضوية).","the term ‘pharmaceutical’ is used for any chemical substance useful in preventive or thera":"يُستخدم مصطلح <span class='r'>‘صيدلاني’ (Pharmaceutical)</span> لأي مادة كيميائية مفيدة في الوقاية أو العلاج، أو التي تدخل في تحضير الأدوية. وبعضها يُستخدم في المختبر فقط أثناء التحضير وقد لا يكون موجودًا في المنتج النهائي؛ وهذه أيضًا تندرج ضمن المواد الصيدلانية.","importance of inorganic pharmaceuticals":"أهمية المواد الصيدلانية غير العضوية","inorganic pharmaceuticals are useful in any of the following ways:":"تكون المواد الصيدلانية غير العضوية مفيدة بأي من الطرق التالية:","useful medicinally for their therapeutic purpose. example: astringents and antimicrobials ":"<b>مفيدة طبيًا لغرضها العلاجي.</b> مثال: القابضات ومضادات الميكروبات وغيرها.","useful as pharmaceutical aids. example: bentonite, talc etc.":"<b>مفيدة كمساعدات صيدلانية.</b> مثال: البنتونايت والتلك وغيرها.","to change the reaction of body fluid. to acidify or alkalis. example: antacids, alkalis, m":"<b>لتغيير تفاعل سوائل الجسم، أي للتحميض أو القلونة.</b> مثال: مضادات الحموضة والقلويات والأحماض المعدنية.","replacing or replenishing the normal content of body fluids. example: sodium, potassium, c":"<b>تعويض أو تجديد المحتوى الطبيعي لسوائل الجسم.</b> مثال: الصوديوم والبوتاسيوم والكالسيوم والكلوريد والفوسفات وغيرها.","useful as reagents to carry out the reactions. example: catalysts (platinum, nickel) oxidi":"<b>مفيدة ككواشف لإجراء التفاعلات.</b> مثال: المحفزات (البلاتين، النيكل) والعوامل المؤكسدة والمختزلة (هيدريد الليثيوم والألمنيوم).","useful in pharmaceutical analysis. example: titrants such as potassium permanganate.":"<b>مفيدة في التحليل الصيدلاني.</b> مثال: المعايِرات مثل برمنغنات البوتاسيوم.","atomic structure":"التركيب الذرّي","the particles that make up an atom are called subatomic particles (sub- means “smaller siz":"تُسمى الجسيمات التي تكوّن الذرة <b>الجسيمات دون الذرية</b> (البادئة sub- تعني «حجم أصغر»). تتكوّن الذرة من <span class='r'><i>نواة</i></span> مركزية تحيط بها <span class='r'><i>أفلاك</i></span> (orbitals) تشغل مناطق محددة من الفراغ.","1. nucleus: most of the mass of atom ➢ protons: has positive charge. ➢ neutrons: uncharged":"1. <i>النواة:</i> تحتوي على معظم كتلة الذرة<br>&nbsp;&nbsp;➢ <i>البروتونات:</i> ذات شحنة موجبة.<br>&nbsp;&nbsp;➢ <i>النيوترونات:</i> متعادلة الشحنة.","2. orbitals: ➢ electrons: found in electron cloud, has negative charge.":"2. <i>الأفلاك:</i><br>&nbsp;&nbsp;➢ <i>الإلكترونات:</i> توجد في سحابة الإلكترونات وذات شحنة سالبة.","the nucleus":"النواة","the nucleus is at the center of the atom and contains protons and neutrons. protons and ne":"تقع النواة في مركز الذرة وتحتوي على <i>البروتونات</i> و<i>النيوترونات</i>. وتُعرف البروتونات والنيوترونات معًا باسم <i>النيوكليونات</i>.","virtually all the mass of the atom is concentrated in the nucleus, because the electrons w":"تتركز كتلة الذرة تقريبًا بالكامل في النواة، لأن وزن الإلكترونات صغير جدًا.","no. of protons = atomic number of the atomno. of protons + no. of neutrons = mass number o":"<span class='r'>عدد البروتونات = العدد الذري للذرة<br>عدد البروتونات + عدد النيوترونات = العدد الكتلي للذرة</span>","note: mass number is also called the nucleon number":"ملاحظة: العدد الكتلي يُسمى أيضًا عدد النيوكليونات","this information can be given simply in the form:":"يمكن إعطاء هذه المعلومات ببساطة بالشكل التالي:","the electrons":"الإلكترونات","atoms are electrically neutral, and the positiveness of the protons is balanced by the neg":"الذرات متعادلة كهربائيًا، فالشحنة الموجبة للبروتونات تتوازن مع الشحنة السالبة للإلكترونات. ويترتب على ذلك أنه في الذرة المتعادلة:","no. of electrons = no. of protons":"عدد الإلكترونات = عدد البروتونات","so, if an oxygen atom (atomic number = 8) has 8 protons, it must also have 8 electrons; if":"فإذا كانت ذرة الأوكسجين (عددها الذري = 8) تحتوي على 8 بروتونات فلا بد أن تحتوي أيضًا على 8 إلكترونات؛ وإذا كانت ذرة الكلور (عددها الذري = 17) تحتوي على 17 بروتونًا فلا بد أن تحتوي على 17 إلكترونًا.","electronic configuration":"التوزيع الإلكتروني","every element has different electronic configuration.":"لكل عنصر توزيع إلكتروني مختلف.","the number of protons determines the identity of the element.":"عدد البروتونات يحدد هوية العنصر.","the number of electrons determines the charge.":"عدد الإلكترونات يحدد الشحنة.","the number of neutrons determines the isotope.":"عدد النيوترونات يحدد النظير (isotope).","all chemistry done at the electronic level (that is why electrons are very important).":"كل الكيمياء تحدث على المستوى الإلكتروني (ولهذا فإن الإلكترونات مهمة جدًا).","electronic configuration is the arrangement of electrons in an atom. these electrons fill ":"<b>التوزيع الإلكتروني</b> هو ترتيب الإلكترونات في الذرة. وهذه الإلكترونات تملأ الأفلاك الذرية.","how to write electron configuration using aufbau principle":"كيفية كتابة التوزيع الإلكتروني باستخدام مبدأ البناء (Aufbau)","diagonal rule (aufbau principle)":"القاعدة القطرية (مبدأ البناء)","max electrons: (s) = 2 · (p) = 6 · (d) = 10 · (f) = 14":"<b class='r'>الحد الأقصى للإلكترونات: (s) = 2 · (p) = 6 · (d) = 10 · (f) = 14</b>","draw diagonal arrows from top-right to bottom-left through each row.":"ارسم أسهمًا قطرية من أعلى اليمين إلى أسفل اليسار عبر كل صف.","the order in which the orbitals are filled with electrons is: 1s < 2s < 2p < 3s < 3p < 4s ":"ترتيب ملء الأفلاك بالإلكترونات هو: 1s &lt; 2s &lt; 2p &lt; 3s &lt; 3p &lt; 4s &lt; 3d &lt; 4p &lt; 5s &lt; 4d &lt; 5p &lt; 6s &lt; 4f &lt; 5d &lt; 6p &lt; 7s &lt; 5f &lt; 6d &lt; 7p","shorthand & valence electrons":"الصيغة المختصرة والإلكترونات التكافؤية","electronic configurations can also be written in a shorthand which references the last com":"يمكن أيضًا كتابة التوزيع الإلكتروني بصيغة <span class='r'>مختصرة (shorthand)</span> تشير إلى آخر غلاف مكتمل من الأفلاك (أي أن جميع الأفلاك ذات رقم الكم الرئيسي ‘n’ نفسه قد امتلأت).","ex.: electronic configuration of na (11) can write as 3s¹, the electronic configuration of":"مثال: يمكن كتابة التوزيع الإلكتروني لعنصر <b>Na (11)</b> بالشكل 3s¹، ولعنصر <b>Li (3)</b> بالشكل 2s¹.","the electrons in the outer shell (beyond the stable core) called the valence electrons.":"تُسمى الإلكترونات الموجودة في الغلاف الخارجي (بعد القلب المستقر) <span class='r'>الإلكترونات التكافؤية (valence electrons)</span>.","valence electrons: electrons are the electrons in the last shell or energy level of an ato":"الإلكترونات التكافؤية: هي الإلكترونات الموجودة في آخر غلاف أو مستوى طاقة في الذرة.","s holds up to 2 · p holds up to 6 · d holds up to 10":"s تتسع حتى 2 · p تتسع حتى 6 · d تتسع حتى 10","ionization":"التأين","➢ when an atom gains an electron becomes negatively charge (the electrons number more than":"➢ عندما تكتسب الذرة <b>إلكترونًا</b> تصبح <span class='r'>سالبة الشحنة</span> (عدد الإلكترونات أكبر من عدد البروتونات) وتسمى <span class='r'>أنيونًا</span>. وبالطريقة نفسها يمكن لذرات اللافلزات أن تكتسب إلكترونات.","➢ metal atoms can lose electrons to become positively charge cations.":"➢ يمكن لذرات الفلزات أن <b>تفقد إلكترونات</b> لتصبح <span class='r'>كاتيونات موجبة الشحنة</span>.","note: cations are always smaller than the original atom. conversely, anions are always lar":"ملاحظة: الكاتيونات دائمًا أصغر من الذرة الأصلية، وعلى العكس فإن الأنيونات دائمًا أكبر من الذرة الأصلية.","the periodic law":"القانون الدوري","a table of this type was suggested independently around 1868-1870 by the russian chemist m":"اقترح جدولًا من هذا النوع بشكل مستقل نحو عامي 1868-1870 الكيميائي الروسي مندليف والكيميائي الألماني لوثر ماير.","when elements arranged in order of increasing atomic number, there is a periodic repetitio":"عندما تُرتب العناصر بحسب ازدياد العدد الذري، يحدث تكرار دوري لخواصها الفيزيائية والكيميائية.","periodic table of the elements":"الجدول الدوري للعناصر","group numbering: iupac. based on the encyclopaedia britannica periodic table.":"ترقيم المجموعات: IUPAC. مبني على الجدول الدوري في موسوعة بريتانيكا.","alkali metals":"الفلزات القلوية","lithium (li), sodium (na), potassium (k): electron configuration, chemical properties of m":"<b>الليثيوم (Li) والصوديوم (Na) والبوتاسيوم (K):</b> التوزيع الإلكتروني، والخواص الكيميائية للفلزات، ومزايا وعيوب استخدام الأدوية المعتمدة على الليثيوم.","sodium as an essential ion in the human body: drugs, diet and toxicity of sodium ions.":"<b>الصوديوم كأيون أساسي في جسم الإنسان:</b> الأدوية والغذاء وسمّية أيونات الصوديوم.","potassium and its clinical application.":"<b>البوتاسيوم وتطبيقاته السريرية.</b>","members of group 1 of the periodic table (first vertical column) with exception of hydroge":"أعضاء المجموعة 1 من الجدول الدوري (العمود الرأسي الأول) باستثناء الهيدروجين تسمى فلزات قلوية.","in terms of a clinical use, na and k are essential ions for the human body and any imbalan":"من الناحية السريرية، يُعدّ <b>Na</b> و<b>K</b> أيونين أساسيين لجسم الإنسان، ويجب تصحيح أي اختلال في مستوياتهما.","li (lithium salts) is medically used to treat bipolar disorder (bd).":"يُستخدم <b>Li</b> (أملاح الليثيوم) طبيًا لعلاج الاضطراب ثنائي القطب (BD).","this group of elements belongs to s-block metals as they only have one electron in their o":"تنتمي هذه المجموعة من العناصر إلى فلزات <span class='r'>الكتلة s</span> لأن لها إلكترونًا واحدًا فقط في غلافها الخارجي.","the chemistry of the metals is characterized by the loss of this s electron to form a mono":"تتميز كيمياء هذه الفلزات بفقدان هذا الإلكترون s لتكوين أيون أحادي الشحنة الموجبة M⁺.","blocks of the periodic table":"كتل الجدول الدوري","s-block: 1s–7s · d-block: 3d–6d · p-block: 2p–7p · f-block: 4f, 5f (with 5d, 6d).":"الكتلة s: 1s–7s · الكتلة d: 3d–6d · الكتلة p: 2p–7p · الكتلة f: 4f, 5f (مع 5d, 6d).","chemical behavior of alkali metals":"السلوك الكيميائي للفلزات القلوية","it have a silvery white appearance except for caesium which is golden yellow.":"لها <b>مظهر أبيض فضي</b> ما عدا السيزيوم فلونه أصفر ذهبي.","they are all soft metals (can be cut with a knife). the softness of the metal increases wi":"جميعها <b>فلزات لينة</b> (يمكن قطعها بالسكين). وتزداد ليونة الفلز كلما نزلنا في المجموعة.","they are generally very reactive and oxidase in the air. the reactivity increases within t":"وهي بشكل عام <b>شديدة التفاعل وتتأكسد في الهواء</b>. ويزداد النشاط كلما نزلنا في المجموعة.","all alkali metals react violently with water with the formation of the metal hydroxide and":"تتفاعل جميع الفلزات القلوية بعنف مع الماء مكوّنةً هيدروكسيد الفلز والهيدروجين.","5. in terms of their pharmaceutical applications,":"5. من حيث تطبيقاتها الصيدلانية،","alkali metals are not directly useable mainly due to their reaction behavior in aqueous me":"لا يمكن استخدام الفلزات القلوية مباشرة، وذلك أساسًا بسبب سلوكها التفاعلي في الأوساط المائية. ومع ذلك فإن <b>هاليدات</b> الفلزات القلوية وبعض <b>الأكاسيد</b> و<b>الكربونات</b> و<b>السترات</b> و<b>الأملاح</b> الأخرى ذات <b>أهمية دوائية</b>. <span class='r'>محاليل NaCl و KCl مهمة كأملاح معالجة الجفاف الفموية، ويمكن أيضًا استخدام KCl لعلاج نقص البوتاسيوم.</span>","the various salts of sodium, lithium and potassium have the widest use and are discussed i":"أملاح <b>الصوديوم والليثيوم والبوتاسيوم</b> هي الأوسع استخدامًا وسيتم شرحها بالتفصيل في الأقسام التالية. وتتراوح هذه التطبيقات بين استخدام <b>أملاح الصوديوم والبوتاسيوم</b> في علاج <span class='r'>الجفاف واستعادة توازن المعادن</span>، واستخدام <b>أملاح الليثيوم</b> في علاج <span class='r'>الاضطراب ثنائي القطب (BD)</span>.","👍 advantages of using li based drugs":"👍 مزايا استخدام الأدوية المعتمدة على الليثيوم","in 1880, lithium salts used as prophylaxis and treatment of mania, and as prophylaxis in b":"في عام 1880 استُخدمت أملاح الليثيوم للوقاية من <b>الهوس</b> وعلاجه، وللوقاية من <b>الاضطراب ثنائي القطب (BD) والاكتئاب المتكرر</b>.","its taken orally, usually as lithium carbonate li₂co₃ or lithium citrate [li₃c₃h₅o(coo)₃],":"تؤخذ عن طريق الفم، عادةً على شكل <b>كربونات الليثيوم Li₂CO₃</b> أو <b>سترات الليثيوم [Li₃C₃H₅O(COO)₃]</b>، بجرعة إجمالية تصل إلى <b>30 ملي مول/يوم</b>.","li₂co₃ is the preferred lithium salt used, as it causes the least irritation to the stomac":"<b>Li₂CO₃</b> هو ملح الليثيوم المفضل، لأنه يسبب أقل تهيج للمعدة.","👎 disadvantages of using li based drugs":"👎 عيوب استخدام الأدوية المعتمدة على الليثيوم","it has a very narrow therapeutic index window (monitoring of blood levels essential during":"له نافذة مؤشر علاجي ضيقة جدًا (من الضروري مراقبة مستويات الدم أثناء العلاج).","✓ if li⁺ blood plasma concentrations more than 1.5 mmol/l it may cause toxic effects, usua":"✓ إذا كان <b>تركيز Li⁺ في بلازما الدم أكثر من 1.5 ملي مول/لتر</b> فقد يسبب آثارًا سمّية، وعادةً <span class='r'>رجفة في الأصابع واعتلال الكلى وتشنجات. كما أن مشاكل الذاكرة من الآثار الجانبية الشائعة جدًا، ويُبلَّغ كثيرًا عن شكاوى من بطء القدرة العقلية والنسيان.</span>","✓ extreme doses can cause nausea and diarrhea.":"✓ <b>الجرعات المفرطة</b> يمكن أن تسبب <span class='r'>الغثيان والإسهال.</span>","✓ doses above 2 mmol/l require emergency treatment (fatal).":"✓ <b>الجرعات التي تزيد على 2 ملي مول/لتر</b> تتطلب <span class='r'>علاجًا طارئًا (قد تكون مميتة).</span>","👎 disadvantages (continued)":"👎 العيوب (تتمة)","weight gain & decreased thyroid levels.":"<b>زيادة الوزن وانخفاض مستويات الغدة الدرقية.</b>","lithium salts can lead to diabetes insipidus✓ polyuria; excess production of urine, due to":"يمكن أن تؤدي أملاح الليثيوم إلى <b>السكري الكاذب (diabetes insipidus)</b><br>✓ بوال (Polyuria)؛ أي إنتاج مفرط للبول بسبب تضرر البنى الداخلية للكلى.","drug-drug interaction:✓ with nonsteroidal anti-inflammatory drugs (nsaids) by reducing lit":"<b>التداخل الدوائي:</b><br>✓ مع مضادات الالتهاب غير الستيرويدية (NSAIDs) إذ تقلل تصفية الكلى لليثيوم مما يؤدي إلى سمّية الليثيوم.<br>✓ كما أن الاستخدام المتزامن لمدرّات البول، التي قد تسبب نقص الصوديوم، يمكن أن يزيد سمّية الليثيوم سوءًا وقد يكون خطيرًا.","sodium as an essential ion in the human body":"الصوديوم كأيون أساسي في جسم الإنسان","the main biological roles of sodium ions are:":"الأدوار البيولوجية الرئيسية لأيونات الصوديوم هي:","1. maintenance of body fluids in humans.":"1. الحفاظ على سوائل الجسم عند الإنسان.","sodium is an essential mineral for the human body and crucial for the regulation of the bo":"<b>الصوديوم</b> معدن أساسي لجسم الإنسان وضروري لتنظيم سوائل الجسم من خلال نشاطه التناضحي.","its account for over 90% of all ions in the plasma and in the interstitial fluid, and it i":"يشكل أكثر من 90% من جميع الأيونات في البلازما والسائل الخلالي، و<b>هو الكاتيون الأكثر وفرة في السائل خارج الخلوي</b> (إذ يتحكم محتوى Na⁺ في الحجم خارج الخلوي).","* in particular, the kidneys play an important role in regulating the fluid level of the b":"* وعلى وجه الخصوص، تؤدي <span class='r'>الكلى</span> دورًا مهمًا في تنظيم مستوى سوائل الجسم، وكذلك في الترشيح والإفراز وإعادة امتصاص Na⁺ في النيفرونات، وهي الوحدة الوظيفية للكلية.","2. neurons & transmission of nerve impulses.":"2. الخلايا العصبية ونقل السيالات العصبية.","in the human body, na⁺ is often used to actively build up an electrostatic potential acros":"في جسم الإنسان، يُستخدم <span class='r'>Na⁺</span> غالبًا لبناء جهد كهروستاتيكي عبر الأغشية بنشاط، ويكون أيون البوتاسيوم <span class='r'>K⁺</span> هو الأيون المقابل. وبناء الجهد الكهروستاتيكي عبر أغشية الخلايا مهم للسماح بنقل السيالات العصبية.","3. play a crucial role in the contraction of muscles and in the mode of action of several ":"3. يؤدي دورًا حاسمًا في انقباض العضلات وفي آلية عمل عدة إنزيمات.","na⁺ used in the human body to establish osmotic gradients, which in turn is crucial to con":"يُستخدم <span class='r'>Na⁺</span> في جسم الإنسان <b>لإنشاء تدرجات تناضحية</b>، وهي بدورها حاسمة للتحكم بتوازن الماء. وإضافةً إلى ذلك، تستشعر الكلى انخفاض ضغط الدم وتراكيز Na⁺، فتُفرز هرمونات (مثل الرينين والهرمونات المضادة لإدرار البول (ADHs) والببتيد الأذيني المدر للصوديوم) تتحكم بضغط الدم والتوازنات التناضحية وآليات احتباس الماء.","drugs, diet and toxicity":"الأدوية والغذاء والسمّية","sodium chloride solutions are normally used when the patient is diagnosed with sodium depl":"تُستخدم <span class='r'>محاليل كلوريد الصوديوم</span> عادةً عندما يُشخَّص المريض بنقص الصوديوم والجفاف. ويُعطى العلاج غالبًا وريديًا، لكن في الحالات المزمنة (فقدان الصوديوم الخفيف إلى المتوسط) يمكن إعطاء <span class='r'>كلوريد الصوديوم</span> أو <span class='r'>بيكربونات الصوديوم</span> عن طريق الفم. وتستخدم علاجات الإماهة الفموية عادةً مزيجًا من أملاح قائمة على الفلزات القلوية مثل <b>NaCl و KCl</b> و<b>السترات</b> الخاصة بهما.","chemical structures of (a) sodium chloride, (b) sodium bicarbonate and (c) sodium citrate":"<i>التراكيب الكيميائية لـ (a) كلوريد الصوديوم، (b) بيكربونات الصوديوم، (c) سترات الصوديوم</i>","sodium bicarbonate":"بيكربونات الصوديوم","is usually administered orally to regulate the serum ph.":"تُعطى عادةً عن طريق الفم لتنظيم pH المصل.","imbalances of the plasma ph can be due to problems occurring in the kidneys such as renal ":"<b>قد تنتج اختلالات pH البلازما عن مشاكل في الكلى</b> مثل <b>الحُماض الأنبوبي الكلوي (renal tubular acidosis)</b> (حالة طبية يتراكم فيها الحمض في الجسم بسبب فشل الكلى في تنظيم pH البول وبلازما الدم).","in renal tubular acidosis, the kidneys either fail to filter or secrete acid ions (h⁺) fro":"<span class='r'>في الحُماض الأنبوبي الكلوي</span> تفشل الكلى <b>إما</b> في <span class='r'>ترشيح أو إفراز أيونات الحمض (H⁺) من البلازما</span> (ويحدث الإفراز في الأنبوب القاصي)، أو في استعادة أيونات البيكربونات (HCO₃⁻) من الراشح (إعادة الامتصاص السلبي في الأنبوب القريب، وإعادة الامتصاص النشط في الأنبوب القاصي)، وهو أمر ضروري لموازنة pH.","in the view of this mode of action, the pharmaceutically active component of sodium bicarb":"وبالنظر إلى آلية العمل هذه، فإن <b>المكوّن الفعّال صيدلانيًا في بيكربونات الصوديوم</b> هو <span class='r'>أنيون البيكربونات</span>، أما <span class='r'>كاتيون Na⁺ فهو المسؤول عن الذوبانية والتوافق.</span>","dietary nacl and toxicity":"NaCl الغذائي والسمّية","the most common dietary source of nacl is table salt; daily recommended nacl intake is rec":"<span class='r'>المصدر الغذائي الأكثر شيوعًا لـ NaCl هو ملح الطعام؛</span> ويُوصى بأن يُحدَّد المتناول اليومي من NaCl بـ 6 غرام للبالغين، بينما يجب أن يكون أقل بكثير للأطفال.","low sodium plasma levels (hyponatremia), which can be a result of dysfunction kidneys or s":"انخفاض مستويات الصوديوم في البلازما <span class='r'>(نقص صوديوم الدم hyponatremia)</span>، الذي قد ينتج عن <span class='r'>خلل في وظائف الكلى</span> أو <span class='r'>فقدان الصوديوم عبر الأمعاء</span>، يسبب أيضًا ضررًا لجسم الإنسان عبر الاختلال التناضحي، ويجب علاجه عند الضرورة. ومن علامات نقص الصوديوم انخفاض ضغط الدم والجفاف وتشنجات العضلات.","the high salt plasma levels (hypernatremia) can result in cardiovascular disorders such as":"ارتفاع مستويات الملح في البلازما <span class='r'>(فرط صوديوم الدم hypernatremia)</span> يمكن أن يؤدي إلى اضطرابات قلبية وعائية مثل ارتفاع ضغط الدم.","signs of acute toxicity may be seen after ingestion of 500–1000 mg/kg body weight nacl. sy":"قد تظهر علامات السمّية الحادة بعد تناول 500–1000 ملغم/كغم من وزن الجسم من NaCl. <span class='r'>الأعراض:</span> القيء وتقرّح الجهاز الهضمي (GI) وتلف الكلى، كما يُعتقد أن زيادة خطر تكوّن حصى الكلى ناتجة عن الإفراط في تناول الملح.","potassium and its clinical application":"البوتاسيوم وتطبيقاته السريرية","in the human body, 95% of the k⁺ can be found inside the cells, with the remaining 5% main":"في جسم الإنسان، يوجد 95% من K⁺ داخل الخلايا، بينما يدور الـ 5% المتبقية في بلازما الدم بشكل رئيسي. ويُحافَظ على هذا التوازن بعناية بواسطة مضخة Na⁺/K⁺، وقد تكون للاختلالات، كما في نقص أو فرط بوتاسيوم الدم، عواقب خطيرة.","hypokalemia":"نقص بوتاسيوم الدم (Hypokalemia)","is a potentially serious condition where the patient has low levels of k⁺ in blood plasma.":"هي حالة خطيرة محتملة يكون فيها لدى المريض مستويات منخفضة من K⁺ في بلازما الدم.","symptoms: weakness of the muscles or ecg (electrocardiogram) abnormalities.":"<span class='r'>الأعراض:</span> ضعف العضلات أو شذوذات في تخطيط القلب (ECG).","it may result due to reduced k⁺ intake caused by gi disturbance, such as diarrhea and vomi":"قد ينتج عن <span class='r'>انخفاض تناول K⁺ بسبب اضطراب الجهاز الهضمي</span> مثل <b>الإسهال</b> و<b>القيء</b>، أو عن <span class='r'>زيادة إفراز K⁺ بسبب إدرار البول</span>؛ (المرضى الذين يعالجون بمدرّات البول مثل <span class='r'>مدرّات العروة والثيازيدات</span>. تزيد هذه الأصناف من الأدوية إفراز Na⁺ في النيفرونات لزيادة إخراج الماء. ولكنها للأسف تزيد أيضًا إفراز K⁺ وتؤدي إلى نقص بوتاسيوم الدم. <span class='r'>وعلى النقيض</span>، فإن مدرّات البول الحافظة للبوتاسيوم تحافظ بنشاط على أيونات البوتاسيوم.","potassium salts are preferably given as liquid preparations (kcl is the preferred salt use":"<b>يُفضَّل إعطاء أملاح البوتاسيوم على شكل مستحضرات سائلة (KCl هو الملح المفضل).</b> يمكن استخدام أملاح أخرى قائمة على البوتاسيوم إذا كان المريض معرّضًا لخطر الإصابة بفرط كلوريد الدم (hyperchloremia) – ارتفاع مستويات الكلوريد في البلازما.","oral bicarbonate solutions such as potassium bicarbonate are typically given orally for ch":"<b>المحاليل الفموية للبيكربونات</b> مثل <b>بيكربونات البوتاسيوم</b> تُعطى عادةً عن طريق الفم في حالات الحُماض المزمن – أي انخفاض pH بلازما الدم. وقد يكون ذلك أيضًا بسبب ضعف وظائف الكلى (يجب تقييم استخدام بيكربونات البوتاسيوم لعلاج الحُماض بعناية، إذ إن حتى التغيرات الصغيرة في مستويات البوتاسيوم في البلازما قد تكون لها عواقب وخيمة).","potassium citrate is used in the united kingdom as an over-the-counter drug for the relief":"يُستخدم <span class='r'>سترات البوتاسيوم</span> في المملكة المتحدة كدواء بدون وصفة طبية لتخفيف <b>الانزعاج الناتج عن التهابات المسالك البولية الخفيفة</b> عن طريق رفع pH البول.","it should be not given to men if:– they experience pain in the kidney area (risk of kidney":"يجب عدم إعطاؤه للرجال إذا:<br>– عانوا من ألم في منطقة الكلى (خطر حصى الكلى) أو إذا وُجد دم أو قيح في البول.<br>– كما ينبغي للمرضى المصابين بارتفاع ضغط الدم أو السكري تجنب تناول سترات البوتاسيوم دون استشارة طبيبهم العام (GP).","❑ potassium salts are also available in the form of tablets or capsules for oral applicati":"❑ تتوفر <span class='r' style='font-size:20px'>أملاح البوتاسيوم</span> أيضًا على شكل أقراص أو كبسولات للاستعمال الفموي، خصوصًا كأدوية بدون وصفة طبية.","usually, their formulation is designed to allow the potassium ions to be slowly secreted, ":"عادةً ما تُصمَّم تركيبتها للسماح بإفراز أيونات البوتاسيوم ببطء، لأن التراكيز العالية جدًا من K⁺ معروفة بأنها سامة لخلايا الأنسجة ويمكن أن تسبب أذى لمخاطية المعدة.","therefore, nonprescription potassium supplement pills are usually restricted to <100 mg of":"لذلك تُحصَر أقراص مكملات البوتاسيوم التي تُباع بدون وصفة عادةً بأقل من 100 ملغم من K⁺.","adverse effects and toxicity: hyperkalaemia":"الآثار الضارة والسمّية: فرط بوتاسيوم الدم (Hyperkalaemia)","❑ the therapeutic window for k⁺ in the blood plasma is very small (3.5–5.0 mmol), and espe":"❑ النافذة العلاجية لـ <b>K⁺</b> في بلازما الدم صغيرة جدًا <span class='r'>(3.5–5.0 ملي مول)</span>، وخصوصًا فرط بوتاسيوم الدم، أي ارتفاع مستوى K⁺ في البلازما، يمكن أن يؤدي إلى مشاكل صحية خطيرة.","❑ potassium salts can cause nausea and vomiting and in extreme cases can lead to small bow":"❑ يمكن أن تسبب أملاح البوتاسيوم الغثيان والقيء، وفي الحالات الشديدة قد تؤدي إلى تقرحات في الأمعاء الدقيقة.","❑ acute severe hyperkalaemia is defined when the plasma potassium concentration exceeds 6.":"❑ يُعرَّف فرط بوتاسيوم الدم الحاد الشديد عندما يتجاوز تركيز البوتاسيوم في البلازما <span class='r'>6.5 ملي مول/لتر</span> أو <span class='r'>إذا لوحظت تغيرات في تخطيط القلب.</span> وقد يؤدي ذلك إلى <span class='r'>توقف القلب</span>، وهو يحتاج إلى علاج فوري.","❑ treatment options include the use of calcium gluconate intravenous injections, which min":"❑ تشمل خيارات العلاج استخدام حقن <span class='r'>غلوكونات الكالسيوم</span> الوريدية، التي تقلل من تأثيرات فرط بوتاسيوم الدم على القلب.","❑ i.v injection of soluble insulin promotes the shift of potassium ions into the cells.":"❑ يعزز الحقن الوريدي لـ <span class='r'>الإنسولين القابل للذوبان</span> انتقال أيونات البوتاسيوم إلى داخل الخلايا.","❑ diuretics also can be used to increase the secretion of k⁺ in the kidneys, and":"❑ يمكن أيضًا استخدام <span class='r'>مدرّات البول</span> لزيادة إفراز K⁺ في الكلى، و","❑ dialysis can be a good option if urgent treatment is required.":"❑ يمكن أن يكون <span class='r'>الغسيل الكلوي</span> خيارًا جيدًا إذا كان العلاج العاجل مطلوبًا.","❑ ion-exchange resins, such as polystyrene sulfonate resins, may be used in mild to modera":"❑ قد تُستخدم <span class='r'>راتنجات التبادل الأيوني</span> مثل <span class='r'>راتنجات سلفونات البوليسترين</span> في فرط بوتاسيوم الدم الخفيف إلى المتوسط لإزالة البوتاسيوم الزائد إذا لم تكن هناك تغيرات في تخطيط القلب.","* especially in patients suffering from kidney diseases or end-stage renal failure, the po":"* خصوصًا عند المرضى الذين يعانون من أمراض الكلى أو الفشل الكلوي في مرحلته النهائية، يجب مراقبة مستويات البوتاسيوم بعناية شديدة وتصحيحها عند الضرورة. (لأن تراكم البوتاسيوم في بلازما الدم قد يسبب توقف القلب)","the end...":"النهاية..."};
+function nk(e){return e.textContent.replace(/\s+/g,' ').trim().toLowerCase().slice(0,90)}
+function tr(pg){
+pg.querySelectorAll('h2,h3,p,li,.box').forEach(function(e){
+if(e.closest('table,svg,.ptw,.lg'))return;
+var a=AR[nk(e)];if(!a)return;
+e.classList.add('tx');e.title='اضغط للترجمة';
+e.onclick=function(){
+if(e.dataset.ar=='1'){e.innerHTML=e.dataset.en;e.removeAttribute('dir');e.classList.remove('ar');e.dataset.ar='0'}
+else{e.dataset.en=e.innerHTML;e.innerHTML=a;e.dir='rtl';e.classList.add('ar');e.dataset.ar='1'}}})}
+var OV=["Atomic number (Z)|No. of protons = No. of electrons in a neutral atom","Mass number (A)|Protons + neutrons (nucleon number)","Who decides what?|Protons → element · Electrons → charge · Neutrons → isotope","Max electrons|s = 2 · p = 6 · d = 10 · f = 14","Aufbau order|1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p 6s 4f 5d 6p 7s 5f 6d 7p","Ions|Metals lose e⁻ → cation (smaller) · Nonmetals gain e⁻ → anion (larger)","Periodic law|Properties repeat periodically with increasing atomic number (Mendeleev & Meyer)","Group 1 (s¹)|Form M⁺ · soft · reactivity ↑ down group · 2Li + 2H₂O → 2LiOH + H₂↑","Lithium|Li₂CO₃ for bipolar disorder · narrow index · toxic >1.5 · emergency >2 mmol/L","Sodium|Main extracellular cation (>90% of plasma ions) · NaCl ≤ 6 g/day","Potassium|95% intracellular · plasma 3.5–5.0 mmol/L · severe hyperK⁺ >6.5 mmol/L","Hyperkalaemia Rx|Ca gluconate IV · soluble insulin IV · diuretics · dialysis · resins"];
+var MM=["Inorganic pharmaceuticals|Study of all elements and compounds except carbon compounds. A pharmaceutical is any chemical useful for prevention, therapy or preparing medicines.","Importance|Therapeutic agents (astringents, antimicrobials) · pharmaceutical aids (bentonite, talc) · acidifying/alkalinising agents · replenishing body fluids (Na, K, Ca, Cl, phosphate) · reagents/catalysts · analysis (KMnO₄ titrant).","Atomic structure|Nucleus (protons +, neutrons 0) holds most of the mass. Electrons (−) occupy orbitals. Neutral atom: e⁻ = p⁺.","Electronic configuration|Fill orbitals by the Aufbau (diagonal) rule: s2 · p6 · d10 · f14. Shorthand uses the noble-gas core, e.g. Na = [Ne]3s¹. Valence electrons = outer shell.","Ionization|Gain e⁻ → anion (larger). Lose e⁻ → cation (smaller). Metals tend to form cations.","Periodic table|Arranged by atomic number. Blocks: s (1s–7s), p (2p–7p), d (3d–6d), f (4f, 5f).","Alkali metals|Group 1 s-block (not H): Li, Na, K, Rb, Cs, Fr. Silvery, soft (Cs golden), very reactive with water → hydroxide + H₂. Used as salts, not as metals.","Lithium|Li₂CO₃ (preferred, least gastric irritation) for mania, bipolar disorder, recurrent depression; ≤30 mmol/day. Narrow therapeutic index; >1.5 mmol/L toxic, >2 mmol/L emergency. NSAIDs and diuretics raise toxicity.","Sodium|Fluid balance, nerve impulses, muscle contraction, osmotic gradients. NaCl for depletion/dehydration; ORS = NaCl + KCl + citrates. Limit 6 g/day.","Sodium bicarbonate|Given orally to regulate serum pH (renal tubular acidosis). HCO₃⁻ is the active part; Na⁺ gives solubility.","Potassium|95% intracellular, kept by the Na⁺/K⁺ pump. KCl liquid is preferred; K-bicarbonate for chronic acidosis; K-citrate raises urinary pH (mild UTI). OTC tablets <100 mg K⁺.","Hypo- & hyperkalaemia|Hypo: weakness, ECG changes (diarrhoea, vomiting, loop/thiazide diuretics). Hyper: >6.5 mmol/L or ECG changes → cardiac arrest; treat with Ca gluconate, insulin, diuretics, dialysis, resins."];
+var FCL=[[
+"Atomic number|Number of protons (= number of electrons in a neutral atom)",
+"Mass number (nucleon number)|No. of protons + no. of neutrons",
+"Nucleons|Protons and neutrons collectively",
+"Which particle determines the element's identity?|Protons",
+"Which particle determines the charge?|Electrons",
+"Which particle determines the isotope?|Neutrons",
+"Where is virtually all the atom's mass?|In the nucleus (electrons weigh so little)",
+"Max electrons in s, p, d, f|2, 6, 10, 14",
+"Electronic configuration of Na (11)|1s² 2s² 2p⁶ 3s¹ = [Ne]3s¹",
+"Alkali metals (group 1)|All group 1 members except hydrogen",
+"Medical use of lithium salts|Bipolar disorder (BD), mania",
+"Normal plasma K⁺ window|3.5–5.0 mmol/L"
+],[
+"Why must Na⁺ and K⁺ imbalances be corrected?|They are essential ions for the human body",
+"Cations vs anions: size relative to the original atom|Cations are always smaller; anions are always larger",
+"Why does the periodic law repeat properties?|Elements ordered by increasing atomic number show periodic repetition of properties",
+"Preferred lithium salt and why|Li₂CO₃ — causes the least stomach irritation",
+"Reactivity and softness trend down group 1|Both increase down the group",
+"Why are alkali metals not used directly as drugs?|They react violently in aqueous media; their halides, carbonates, citrates and other salts are used",
+"Active component of sodium bicarbonate and the role of Na⁺|HCO₃⁻ is active; Na⁺ gives solubility and compatibility",
+"Acute NaCl toxicity dose and symptoms|500–1000 mg/kg: vomiting, GI ulceration, renal damage",
+"Why are OTC K⁺ tablets limited to <100 mg and slow-release?|High K⁺ is toxic to cells and injures gastric mucosa",
+"Which diuretics cause hypokalaemia?|Loop diuretics and thiazides (↑ Na⁺ and K⁺ excretion)",
+"Why is potassium citrate given for mild UTI discomfort?|It raises urinary pH",
+"Why can NSAIDs and diuretics worsen lithium therapy?|NSAIDs reduce renal lithium clearance; diuretics cause Na⁺ depletion → toxicity"
+],[
+"Li⁺ at 1.6 mmol/L: classify and list expected effects|Above 1.5 mmol/L = toxic: finger tremor, renal impairment, convulsions, memory problems",
+"Why is lithium monitoring essential?|Very narrow therapeutic index; >2 mmol/L is an emergency (fatal)",
+"Patient on lithium starts a diuretic: why dangerous?|Sodium depletion worsens lithium toxicity",
+"Lithium-induced polyuria: what condition and why?|Diabetes insipidus — damage to internal kidney structures",
+"In renal tubular acidosis, which two defects exist and where?|Failed H⁺ secretion (distal tubule) or failed HCO₃⁻ reabsorption (proximal passive, distal active)",
+"Why is Na⁺ the main controller of extracellular volume?|Over 90% of plasma and interstitial ions; osmotic activity regulates body fluid",
+"Which hormones respond to ↓ BP and ↓ Na⁺ sensed by kidneys?|Renin, ADH, atrial natriuretic peptide",
+"Why is K⁺ the 'counter-ion' to Na⁺?|Na⁺/K⁺ pump builds membrane potential for nerve impulse transmission; 95% of K⁺ is intracellular",
+"Why prefer KCl but sometimes avoid it?|KCl is the preferred liquid salt; use others if at risk of hyperchloremia",
+"Define acute severe hyperkalaemia and its danger|Plasma K⁺ >6.5 mmol/L or ECG changes → cardiac arrest",
+"Mechanism: calcium gluconate vs insulin in hyperkalaemia|Ca gluconate protects the heart; insulin shifts K⁺ into cells",
+"When are polystyrene sulfonate resins appropriate?|Mild–moderate hyperkalaemia without ECG changes (dialysis if urgent)"
+]].map(function(a){return a.map(function(s){return s.split("|")})});
+var QZL=[[
+"Number of protons equals the…|Atomic number|Mass number|Number of neutrons|Valence electrons",
+"Protons + neutrons equals the…|Mass number|Atomic number|Charge|Valence number",
+"Which particle determines the isotope?|Neutrons|Protons|Electrons|Nucleons",
+"Max electrons in a p subshell|6|2|10|14",
+"Neutral chlorine (Z = 17) has how many electrons?|17|18|35|7",
+"Which orbital fills right after 4s?|3d|4p|4d|5s",
+"Alkali metals belong to the…|s-block|p-block|d-block|f-block",
+"The golden-yellow alkali metal is…|Caesium|Lithium|Sodium|Potassium",
+"Lithium salts are used to treat…|Bipolar disorder|Hypertension|Dehydration|Acidosis",
+"The most abundant extracellular cation is…|Na⁺|K⁺|Li⁺|Ca²⁺",
+"Maximum daily NaCl intake recommended for adults|6 g|2 g|15 g|20 g",
+"Normal plasma K⁺ window|3.5–5.0 mmol/L|1.0–2.0 mmol/L|6.5–8.0 mmol/L|10–15 mmol/L"
+],[
+"Cations compared with their parent atoms are…|Always smaller|Always larger|Equal in size|Radioactive",
+"Why are alkali metals not used directly as drugs?|Violent reaction in aqueous media|They are insoluble|They are inert|They are radioactive",
+"Why is Li₂CO₃ the preferred lithium salt?|Least stomach irritation|Most soluble|Cheapest|No renal excretion",
+"Active moiety of sodium bicarbonate|Bicarbonate anion|Sodium cation|Water of crystallisation|Carbonic acid",
+"In sodium bicarbonate, Na⁺ is responsible for…|Solubility and compatibility|pH regulation|Nerve impulses|Diuresis",
+"Hormone NOT listed as controlling BP/water balance|Thyroxine|Renin|ADH|Atrial natriuretic peptide",
+"Hypokalaemia may be caused by…|Loop diuretics and thiazides|Potassium-sparing diuretics|Insulin deficiency|Calcium gluconate",
+"Potassium citrate relieves mild UTI discomfort by…|Raising urinary pH|Lowering urinary pH|Killing bacteria|Raising plasma K⁺",
+"Nonprescription K⁺ pills are limited to…|<100 mg K⁺|<500 mg K⁺|<1 g K⁺|<10 mg K⁺",
+"Acute NaCl toxicity appears after…|500–1000 mg/kg|5–10 mg/kg|50–100 mg/kg|5 g/kg",
+"Drug class that reduces renal lithium clearance|NSAIDs|Penicillins|Antacids|Vitamins",
+"Lithium-induced polyuria results from…|Diabetes insipidus|Diabetes mellitus|Hyperthyroidism|Gout"
+],[
+"Plasma Li⁺ of 1.7 mmol/L suggests…|Toxicity: tremor, renal impairment, convulsions|Safe therapeutic level|Fatal level needing emergency care|Sub-therapeutic level",
+"Patient on lithium given a thiazide: the risk is…|Na⁺ depletion worsening lithium toxicity|Lower lithium levels|Hyperkalaemia|No interaction",
+"Defect in renal tubular acidosis (distal tubule)|Failure to secrete H⁺|Failure to reabsorb glucose|Excess Na⁺ loss|Failure to secrete K⁺",
+"HCO₃⁻ passive reabsorption in RTA occurs at the…|Proximal tubule|Distal tubule|Loop of Henle|Collecting duct only",
+"Which finding indicates acute severe hyperkalaemia?|K⁺ >6.5 mmol/L or ECG changes|K⁺ 5.0 mmol/L|K⁺ 3.5 mmol/L|Na⁺ >145 mmol/L",
+"Calcium gluconate IV in hyperkalaemia acts by…|Minimising cardiac effects|Shifting K⁺ into cells|Increasing K⁺ excretion|Binding K⁺ in gut",
+"Insulin IV lowers plasma K⁺ by…|Promoting shift of K⁺ into cells|Increasing renal secretion|Removing K⁺ by dialysis|Chelating K⁺",
+"Resins (polystyrene sulfonate) are suitable when…|Mild–moderate case, no ECG changes|Urgent cardiac arrest risk|Hypokalaemia|Lithium toxicity",
+"Patient with raised BP or diabetes and potassium citrate:|Avoid without consulting GP|Take double dose|Safe with no advice|Use IV instead",
+"Potassium salt preferred, unless hyperchloremia risk|KCl|K bicarbonate|K citrate|K iodide",
+"Kidney-disease patients on K⁺ salts need…|Careful K⁺ monitoring (arrest risk)|No monitoring|Na⁺ restriction only|Lithium co-therapy",
+"Chronic acidosis is treated orally with…|Potassium bicarbonate (carefully evaluated)|Potassium chloride|Lithium citrate|Calcium gluconate"
+]].map(function(a){return a.map(function(s){return s.split("|")})});
+var LVN=["Level 1 · Easy","Level 2 · Medium","Level 3 · Hard"];
+FCL[0]=FCL[0].concat([
+"Inorganic chemistry studies…|All elements and their compounds except carbon and its compounds",
+"Pharmaceutical (term)|Any chemical useful in prevention, therapy, or preparing medicaments",
+"Examples of pharmaceutical aids|Bentonite, talc",
+"Examples of catalysts|Platinum, nickel",
+"Example of oxidizing/reducing agent|Lithium aluminum hydride",
+"Example of a titrant|Potassium permanganate",
+"Antacids and alkalis are used to…|Change the reaction of body fluids (acidify or alkalise)",
+"Ions replenishing body fluids|Sodium, potassium, calcium, chloride, phosphate",
+"Subatomic particles|Particles smaller than the atom that make it up",
+"Charge of protons / neutrons|Positive / uncharged",
+"Where are electrons found?|In orbitals (electron cloud); negative charge",
+"Mass number is also called|Nucleon number",
+"¹⁹₉F: atomic number and mass number|Atomic number 9, mass number 19",
+"Neutral atom: electrons vs protons|Equal numbers",
+"Electronic configuration|Arrangement of electrons filling the atomic orbitals",
+"Order of orbital filling|1s 2s 2p 3s 3p 4s 3d 4p 5s …",
+"Configuration of H|1s¹",
+"Configuration of He|1s²",
+"Configuration of Be|1s² 2s²",
+"Configuration of B|1s² 2s² 2p¹",
+"Shorthand configuration of Li|[He]2s¹",
+"Valence electrons of Li and Na|One each",
+"Atom that gains an electron|Anion (negative)",
+"Metal atoms that lose electrons|Cations (positive)",
+"Chemists who proposed the periodic table|Mendeleev (Russian) and Lothar Meyer (German)",
+"Periodic law|Properties repeat periodically with increasing atomic number",
+"Where is group 1?|First vertical column (without hydrogen)",
+"Atomic numbers of Li, Na, K|3, 11, 19",
+"Why do alkali metals form M⁺?|One outer s electron, which they lose",
+"Shorthand of Rb|[Kr]5s¹",
+"Shorthand of Cs|[Xe]6s¹",
+"Shorthand of Fr|[Rn]7s¹",
+"Appearance and hardness of alkali metals|Silvery white, soft (cut with a knife)",
+"Li + water equation|2Li + 2H₂O → 2LiOH + H₂↑",
+"Year lithium was used for mania|1880",
+"Oral forms of lithium|Lithium carbonate and lithium citrate",
+"Lithium toxic effects|Finger tremor, renal impairment, convulsions",
+"Side effect reported with lithium|Memory problems, slowed mental ability, forgetfulness",
+"Why are Na and K clinically important?|Essential ions; imbalance must be corrected",
+"Na⁺ share of plasma ions|Over 90%",
+"Common dietary source of NaCl|Table salt",
+"Hyponatremia signs|Low BP, dehydration, muscle cramps",
+"Hypokalaemia symptoms|Muscle weakness, ECG abnormalities",
+"K⁺ inside the cells|95%",
+"Oral rehydration salts contain|NaCl, KCl and their citrates",
+"Hyperkalaemia IV drug protecting the heart|Calcium gluconate",
+"Hyperkalaemia drug shifting K⁺ into cells|Soluble insulin (IV)",
+"Urgent option for hyperkalaemia|Dialysis"
+].map(function(s){return s.split("|")}));
+QZL[0]=QZL[0].concat([
+"Inorganic chemistry excludes…|Carbon and its compounds|Metals|Halogens|Salts",
+"A 'pharmaceutical' is a chemical useful in…|Prevention or therapy|Only diagnosis|Only cosmetics|Only farming",
+"Bentonite and talc are…|Pharmaceutical aids|Titrants|Catalysts|Antacids",
+"Platinum and nickel are used as…|Catalysts|Titrants|Antacids|Aids",
+"Lithium aluminum hydride is a…|Reducing agent|Titrant|Antacid|Catalyst only",
+"Potassium permanganate is used as a…|Titrant|Antacid|Aid|Catalyst",
+"Antacids are used to…|Change the reaction of body fluids|Replace sodium|Titrate|Catalyse",
+"The positively charged particle|Proton|Neutron|Electron|Orbital",
+"The uncharged particle|Neutron|Proton|Electron|Anion",
+"Electrons are found in the…|Electron cloud (orbitals)|Nucleus|Neutron|Proton",
+"Mass number is also called…|Nucleon number|Atomic number|Valence number|Charge number",
+"In ¹⁹₉F, the atomic number is…|9|19|10|28",
+"Neutral oxygen (Z = 8) has electrons…|8|16|6|10",
+"Max electrons in an s subshell|2|6|10|14",
+"Configuration of H|1s¹|1s²|2s¹|1p¹",
+"Configuration of He|1s²|1s¹|1s² 2s¹|2s²",
+"Configuration of Be|1s² 2s²|1s² 2s¹|1s² 2p²|1s² 2s² 2p¹",
+"Configuration of B|1s² 2s² 2p¹|1s² 2s³|1s² 2s² 2p²|1s² 2s² 3s¹",
+"Shorthand of Li|[He]2s¹|[Ne]2s¹|[He]3s¹|[Ar]2s¹",
+"Shorthand of Na|[Ne]3s¹|[He]3s¹|[Ar]3s¹|[Ne]2s¹",
+"Valence electrons of Li|1|2|3|6",
+"An atom that gains an electron becomes a…|Anion|Cation|Isotope|Nucleon",
+"Metal atoms lose electrons to form…|Cations|Anions|Isotopes|Neutrons",
+"Anions are, compared with the atom…|Larger|Smaller|Equal|Radioactive",
+"The Russian chemist behind the periodic table|Mendeleev|Meyer|Dalton|Bohr",
+"The German chemist behind the periodic table|Lothar Meyer|Mendeleev|Rutherford|Pauli",
+"Group 1 is the…|First vertical column|Last column|Second period|Transition block",
+"Hydrogen is…|Excluded from alkali metals|An alkali metal|A halogen|A noble gas",
+"Atomic number of Li|3|11|19|37",
+"Atomic number of K|19|11|37|55",
+"Shorthand of Rb|[Kr]5s¹|[Ar]5s¹|[Xe]5s¹|[Kr]4s¹",
+"Shorthand of Cs|[Xe]6s¹|[Kr]6s¹|[Rn]6s¹|[Xe]5s¹",
+"Shorthand of Fr|[Rn]7s¹|[Xe]7s¹|[Rn]6s¹|[Kr]7s¹",
+"Alkali metals form the ion…|M⁺|M²⁺|M⁻|M³⁺",
+"Alkali metals are…|Soft; cut with a knife|Hard|Gases|Brittle",
+"Alkali metals + water give…|Hydroxide + H₂|Oxide + O₂|Chloride + H₂|Carbonate + CO₂",
+"In 1880 lithium salts were used for…|Mania|Hypertension|Infection|Pain",
+"Lithium is taken orally as…|Carbonate or citrate|Chloride|Nitrate|Sulfate",
+"Memory problems are a common side effect of…|Lithium|Sodium chloride|Calcium gluconate|Potassium citrate",
+"Oral rehydration salts contain…|NaCl, KCl and citrates|Li₂CO₃|CaCl₂ only|NaOH",
+"Most common dietary source of NaCl|Table salt|Milk|Meat|Bread",
+"A sign of hyponatremia|Muscle cramps|Hypertension|Tremor|Polyuria",
+"Hypernatremia can cause…|Hypertension|Hypotension|Cramps|Hypokalaemia",
+"A symptom of hypokalaemia|Muscle weakness|Tremor|Polyuria|Jaundice",
+"IV drug protecting the heart in hyperkalaemia|Calcium gluconate|KCl|Li₂CO₃|NaCl",
+"IV insulin lowers K⁺ by…|Shifting it into cells|Excreting it|Binding it in gut|Blocking Na⁺",
+"Urgent option for hyperkalaemia|Dialysis|Lithium|KCl|Table salt",
+"Percentage of body K⁺ inside cells|95%|5%|50%|75%"
+].map(function(s){return s.split("|")}));
+FCL[1]=FCL[1].concat([
+"Atom with 11 protons and 10 electrons|Na⁺ cation (identity by protons, charge by electrons)",
+"Atom with 17 protons gains one electron|Cl⁻ anion with 18 electrons",
+"Mass number 23, atomic number 11: neutrons?|12 (23 − 11)",
+"Why do isotopes of one element differ?|Same protons, different number of neutrons",
+"Why is chemistry said to occur 'at the electronic level'?|Reactions involve electrons, hence their importance",
+"Purpose of the shorthand configuration|References the last completed shell; shows valence electrons",
+"Which fills first, 4s or 3d?|4s (…3p < 4s < 3d < 4p…)",
+"Full configuration of K|1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹",
+"Why are alkali metals s-block?|One electron in the outer s orbital; lose it to form M⁺",
+"Orbitals of the d, p and f blocks|d: 3d–6d · p: 2p–7p · f: 4f, 5f (with 5d, 6d)",
+"Alkali metal that is not silvery white|Caesium (golden yellow)",
+"Why do alkali metals oxidise in air?|Very reactive; reactivity increases down the group",
+"Products of alkali metal + water|Metal hydroxide + hydrogen gas",
+"Which alkali metal salts are of medicinal interest?|Halides, some oxides, carbonates, citrates and others",
+"Role of NaCl and KCl solutions|Oral rehydration salts; KCl also treats potassium depletion",
+"Indications of lithium salts|Mania, bipolar disorder (prophylaxis), recurrent depression",
+"Li⁺ >1.5 vs >2 mmol/L|>1.5 toxic effects; >2 emergency (fatal)",
+"Lithium effect on weight and thyroid|Weight gain and decreased thyroid levels",
+"Effect of extreme lithium doses|Nausea and diarrhea",
+"Role of the nephron in sodium handling|Filtration, secretion and reabsorption of Na⁺ (functional unit of kidney)",
+"Role of Na⁺ in neurons|Builds membrane potential (K⁺ counter-ion) for nerve impulses",
+"Other roles of Na⁺ besides fluids and nerves|Muscle contraction and action of several enzymes",
+"How is a drop in BP and Na⁺ sensed?|By the kidneys → renin, ADH, atrial natriuretic peptide released",
+"Route of NaCl for sodium depletion|Mostly IV; oral NaCl or NaHCO₃ in mild–moderate chronic loss",
+"Use of sodium bicarbonate|Orally to regulate serum pH",
+"Renal tubular acidosis|Acid accumulates because kidneys fail to regulate urine/plasma pH",
+"Causes of hyponatremia|Kidney dysfunction or sodium loss in the bowels",
+"Consequence of hypernatremia|Cardiovascular disorders such as hypertension",
+"Renal risk of high salt intake|Increased risk of kidney stones",
+"Role of the Na⁺/K⁺ pump|Keeps 95% of K⁺ inside cells and 5% in plasma",
+"Causes of hypokalaemia|Reduced intake (diarrhoea, vomiting) or increased excretion (diuresis)",
+"Potassium-sparing diuretics|Actively preserve potassium ions",
+"Preferred form of potassium salts|Liquid preparations (KCl)",
+"Hyperchloremia|Increased plasma chloride; use other K salts if at risk",
+"Use of potassium bicarbonate|Oral, for chronic acidosis (evaluate carefully)",
+"Potassium citrate should not be given to men with…|Kidney-area pain, or blood or pus in urine",
+"Extreme potassium salt effect on gut|Nausea, vomiting and small bowel ulceration",
+"Danger of acute severe hyperkalaemia|Cardiac arrest — needs immediate treatment"
+].map(function(s){return s.split("|")}));
+QZL[1]=QZL[1].concat([
+"An atom with 11 protons and 10 electrons is…|Na⁺ cation|Na anion|Ne atom|Na isotope",
+"An atom with 17 protons and 18 electrons is…|Cl⁻ anion|Cl⁺ cation|Ar atom|Cl isotope",
+"Mass number 23, atomic number 11: neutrons =|12|11|23|34",
+"Isotopes of an element differ in…|Neutron number|Proton number|Electron number only|Valence electrons",
+"Which orbital fills before 3d?|4s|4p|5s|4d",
+"Full configuration of K|1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹|1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹|1s² 2s² 2p⁶ 3s¹|1s² 2s² 2p⁶ 3s² 3p⁶ 4s²",
+"Alkali metals are s-block because…|One electron in the outer s orbital|They fill d orbitals|They have 2 outer electrons|They are nonmetals",
+"d-block orbitals|3d–6d|2p–7p|1s–7s|4f–5f",
+"p-block orbitals|2p–7p|3d–6d|1s–7s|4f–5f",
+"f-block orbitals|4f, 5f|3d–6d|2p–7p|1s–7s",
+"Alkali metal that is not silvery white|Caesium|Lithium|Potassium|Sodium",
+"Alkali metal reactivity down the group…|Increases|Decreases|Is constant|Is random",
+"Alkali metal salts of medicinal interest|Halides, carbonates, citrates|Pure metals|Hydrides|Amalgams",
+"NaCl and KCl solutions are important as…|Oral rehydration salts|Antacids|Mood stabilisers|Titrants",
+"Total lithium dose up to…|30 mmol/day|3 mmol/day|300 mmol/day|3000 mmol/day",
+"Lithium effect on thyroid|Decreased levels|Increased levels|None|Hyperthyroidism",
+"Extreme lithium doses cause…|Nausea and diarrhea|Hypertension|Alopecia|Jaundice",
+"Li⁺ above 2 mmol/L is…|Emergency (fatal)|Therapeutic|Mild|Normal",
+"The functional unit of the kidney|Nephron|Ureter|Bladder|Capsule",
+"Na⁺ counter-ion in nerve impulses|K⁺|Ca²⁺|Li⁺|Cl⁻",
+"Na⁺ also plays a role in…|Muscle contraction and enzymes|Bone mineral|Vision|Fat digestion",
+"Falling BP and Na⁺ are sensed by the…|Kidneys|Liver|Lungs|Stomach",
+"Sodium depletion is treated mostly…|Intravenously|Orally only|Topically|Rectally",
+"Mild chronic sodium loss may be treated with…|Oral NaCl or NaHCO₃|IV insulin|Dialysis|Lithium",
+"Renal tubular acidosis means…|Acid accumulation due to kidney failure|Alkali accumulation|Excess K⁺|Excess Na⁺",
+"Hyponatremia may result from…|Kidney dysfunction or bowel Na loss|High salt intake|Lithium|Insulin",
+"High salt intake is believed to raise the risk of…|Kidney stones|Anaemia|Gout|Cataract",
+"The Na⁺/K⁺ pump keeps K⁺…|95% intracellular|50:50|All in plasma|5% intracellular",
+"Hypokalaemia may result from…|Diarrhoea, vomiting or diuresis|High K⁺ intake|Insulin|Resins",
+"Potassium-sparing diuretics…|Preserve K⁺|Excrete K⁺|Raise Na⁺|Cause hypokalaemia",
+"Potassium salts are preferably given as…|Liquid preparations|Tablets|Injections|Inhalers",
+"Hyperchloremia means…|Increased plasma chloride|Decreased chloride|Increased K⁺|Low Na⁺",
+"Potassium bicarbonate is given orally for…|Chronic acidosis|Mania|Dehydration|Hyperkalaemia",
+"Potassium citrate is not for men with…|Kidney pain, blood or pus in urine|Headache|Cough|Insomnia",
+"Extreme potassium salt effect on the gut|Small bowel ulceration|Colitis|Reflux|Gallstones",
+"Dialysis in hyperkalaemia is for…|Urgent treatment|Mild cases|Hypokalaemia|Never",
+"Diuretics lower K⁺ by…|Increasing renal K⁺ secretion|Shifting K⁺ into cells|Protecting heart|Binding in gut",
+"Danger of acute severe hyperkalaemia|Cardiac arrest|Hypertrophy|Angina|Murmur"
+].map(function(s){return s.split("|")}));
+FCL[2]=FCL[2].concat([
+"Configuration and size of Na⁺ (from Na, Z = 11)|1s² 2s² 2p⁶ = [Ne]; smaller than the Na atom",
+"Configuration of Cl⁻ (from Cl, Z = 17)|1s² 2s² 2p⁶ 3s² 3p⁶ = [Ar]; larger than the Cl atom",
+"Valence electrons of boron (Z = 5)|Three (2s² 2p¹)",
+"Valence electrons of Rb and Cs|One each (5s¹ and 6s¹)",
+"Patient on lithium takes ibuprofen: risk?|NSAID reduces renal lithium clearance → lithium toxicity",
+"Clinical picture of lithium toxicity|Finger tremor, renal impairment, convulsions, memory problems",
+"Lithium-treated patient with Na⁺ loss from diuretics|Toxicity worsens; hazardous combination",
+"Why is Na⁺ important in NaHCO₃ if HCO₃⁻ is active?|Responsible for solubility and compatibility",
+"Where does H⁺ secretion fail in RTA?|Distal tubule",
+"Passive vs active HCO₃⁻ reabsorption sites|Passive: proximal tubule · active: distal tubule",
+"Vomiting and diarrhoea: expected K⁺ change|Hypokalaemia (reduced K⁺ intake)",
+"Thiazide user with weakness and ECG changes|Suspect hypokalaemia (↑ K⁺ excretion with Na⁺ secretion)",
+"Diuretic class that preserves K⁺|Potassium-sparing diuretics",
+"Why is K bicarbonate evaluated carefully in acidosis?|Even small plasma K⁺ changes can have severe consequences",
+"Why are OTC K⁺ tablets slow-release?|Very high K⁺ is toxic to cells and injures gastric mucosa",
+"Potassium citrate with raised BP or diabetes|Avoid unless GP is consulted",
+"Why avoid potassium citrate with kidney-area pain?|Risk of kidney stones",
+"ESRF patient and potassium|Monitor closely; K⁺ build-up may trigger cardiac arrest",
+"Acute NaCl toxicity features|Vomiting, GI ulceration, renal damage, stones risk",
+"Children's NaCl intake vs adults' 6 g limit|Significantly lower",
+"What do renin, ADH and ANP regulate?|BP, osmotic balance, water-retaining mechanisms",
+"Compare insulin, diuretics and resins in hyperkalaemia|Insulin shifts K⁺ into cells; diuretics ↑ renal K⁺ secretion; resins remove K⁺ (no ECG changes)",
+"First-line for hyperkalaemia with ECG changes|IV calcium gluconate (minimises cardiac effects)",
+"Lithium-induced diabetes insipidus: key sign|Polyuria (excess urine) from kidney structure damage",
+"Lithium salt choice and reason|Li₂CO₃ is preferred (least stomach irritation); citrate is alternative",
+"Why can Na⁺ depletion be fatal with lithium?|Reduced clearance raises plasma Li⁺ above 2 mmol/L",
+"K⁺ 7.0 mmol/L: classification|Acute severe hyperkalaemia (>6.5 mmol/L)"
+].map(function(s){return s.split("|")}));
+QZL[2]=QZL[2].concat([
+"Configuration of Na⁺ (from Na, Z = 11)|1s² 2s² 2p⁶|1s² 2s² 2p⁶ 3s¹|1s² 2s² 2p⁵|1s² 2s² 2p⁶ 3s²",
+"Configuration of Cl⁻ (Z = 17 atom)|1s² 2s² 2p⁶ 3s² 3p⁶|1s² 2s² 2p⁶ 3s² 3p⁵|1s² 2s² 2p⁶ 3s² 3p⁴|1s² 2s² 2p⁶ 4s¹",
+"Valence electrons of boron|3|1|2|5",
+"Patient on lithium takes ibuprofen: risk is…|Reduced lithium clearance → toxicity|Lower lithium level|Hypokalaemia|No change",
+"Lithium toxicity picture|Tremor, renal impairment, convulsions|Cough, rash|Jaundice, bruising|Insomnia only",
+"Sodium loss from bowel can cause…|Low BP and dehydration|Hypertension|Oedema|Tremor",
+"Diarrhoea and vomiting risk…|Hypokalaemia|Hyperkalaemia|Hypernatremia|Hyperchloremia",
+"Thiazide + weakness + ECG changes suggest…|Hypokalaemia|Hyperkalaemia|Lithium toxicity|Hypernatremia",
+"Diuretics that preserve potassium|Potassium-sparing|Loop|Thiazide|Osmotic",
+"In NaHCO₃, the Na⁺ ensures…|Solubility and compatibility|Acid–base action|Nerve conduction|Antimicrobial effect",
+"HCO₃⁻ reabsorption in the nephron is…|Passive proximal, active distal|Active proximal, passive distal|Both proximal|Both distal",
+"OTC potassium tablets are slow-release because…|High K⁺ is toxic to cells and gastric mucosa|Taste|Cost|Sodium content",
+"Potassium citrate + kidney-area pain risks…|Kidney stones|Hypotension|Hyperthyroidism|Anaemia",
+"K bicarbonate in acidosis needs care since…|Small K⁺ changes can be severe|Poor solubility|Low pH|Na⁺ toxicity",
+"In end-stage renal failure, K⁺ build-up may cause…|Cardiac arrest|Diabetes insipidus|Hypothyroidism|Mania",
+"Child NaCl intake compared with adults|Significantly lower|The same|Higher|Double",
+"Acute NaCl toxicity features|Vomiting, GI ulceration, renal damage|Hair loss, rash|Cough|Insomnia",
+"Na⁺ controls extracellular volume via…|Osmosis|Insulin|Glucose filtration|Bone uptake",
+"Renin, ADH and ANP regulate…|BP, osmotic balance, water retention|Thyroid function|Blood glucose|Bone density",
+"Resins are suitable for…|Mild–moderate hyperkalaemia, no ECG change|Cardiac arrest|Hypokalaemia|Lithium toxicity",
+"Insulin differs from resins because it…|Shifts K⁺ into cells|Binds K⁺ in gut|Excretes K⁺ renally|Protects the heart",
+"Dialysis in hyperkalaemia is chosen when…|Urgent treatment is needed|The case is mild|Hypokalaemia exists|Chronic acidosis exists",
+"Lithium-induced polyuria is due to…|Damage to internal kidney structures|Excess insulin|Thyroid excess|High Na⁺ intake",
+"Lithium side effects include…|Weight gain and ↓ thyroid levels|Weight loss and ↑ thyroid|Hair growth|Hypertension",
+"Plasma Li⁺ of 2.3 mmol/L is…|An emergency, potentially fatal|Normal|Mild toxicity|Sub-therapeutic",
+"Most hazardous with lithium|Diuretic-induced Na⁺ depletion|Vitamins|Antacids|Antihistamines",
+"K⁺ of 7.0 mmol/L is…|Acute severe hyperkalaemia|Normal|Hypokalaemia|Mild",
+"Plasma K⁺ of 3.0 mmol/L is…|Below the 3.5–5.0 window (hypokalaemia)|Normal|Hyperkalaemia|Severe hyper"
+].map(function(s){return s.split("|")}));
+FCL[2].push("Why does K⁺ imbalance matter so much clinically?|Narrow plasma window (3.5–5.0 mmol/L); hypo/hyper can have serious consequences".split("|"));
+var FC=FCL[0].slice();
+var ST={lv:0,t:0,i:0,ed:false,fc:0,fl:false,fo:null,q:null,qi:0,sc:0,ans:false};
+var TABS=["Overview","Lecture","Diagrams","Mini Map","Flash Cards","Quiz Bank"];
+function $(i){return document.getElementById(i)}
+function E(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+function btn(t,c,f){var b=E("button",c,t);b.onclick=f;return b}
+function shuf(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),x=a[i];a[i]=a[j];a[j]=x}return a}
+function subnav(nv,list,fn){nv.style.display="flex";list.forEach(function(x,k){nv.appendChild(btn((k+1)+". "+x,k==ST.i?"on":"",function(){ST.i=k;render()}))})}
+var OR="1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p 6s 4f 5d 6p 7s 5f 6d 7p".split(" "),CP={s:2,p:6,d:10,f:14},SU="⁰¹²³⁴⁵⁶⁷⁸⁹";
+function sup(n){return String(n).replace(/\d/g,function(d){return SU[d]})}
+function cfg(z){var r=z,cum=0,core=0,cn="",C=[[86,"Rn"],[54,"Xe"],[36,"Kr"],[18,"Ar"],[10,"Ne"],[2,"He"]],full=[],sh=[],list=[],mx=0;
+for(var k=0;k<C.length;k++)if(C[k][0]<z){core=C[k][0];cn=C[k][1];break}
+OR.forEach(function(o){if(r<=0)return;var c=CP[o[1]],e=Math.min(c,r);r-=e;var t=o+sup(e);full.push(t);list.push([o,e,c]);if(cum+c>core)sh.push(t);cum+=c;mx=Math.max(mx,+o[0])});
+var v=0;list.forEach(function(x){if(+x[0][0]==mx)v+=x[1]});
+return{full:full.join(" "),sh:(cn?"["+cn+"] ":"")+sh.join(" "),v:v,list:list}}
+var NAMES={1:"Hydrogen",2:"Helium",3:"Lithium",6:"Carbon",7:"Nitrogen",8:"Oxygen",9:"Fluorine",11:"Sodium",12:"Magnesium",17:"Chlorine",19:"Potassium",20:"Calcium",37:"Rubidium",55:"Caesium",87:"Francium"};
+var CL={alk:"Alkali metal",ae:"Alkaline-earth metal",tm:"Transition metal",om:"Other metal",nm:"Other nonmetal",hal:"Halogen",nob:"Noble gas",rare:"Rare-earth / lanthanoid",act:"Actinoid",s:"s-block",p:"p-block",d:"d-block",f:"f-block"};
+var DG=["Atom","Periodic table","Configuration builder","Alkali metals table","Anion structures","Plasma level meter","Hyperkalaemia treatment"];
+function d0(p){p.innerHTML="<h3>Atom — tap a part</h3>"+atom;var bar=E("div","bar"),inf=E("div","box","Select a particle.");
+var I={Nucleus:"Centre of the atom: protons + neutrons (nucleons); holds almost all the mass.",Proton:"Positive charge. No. of protons = atomic number = identity of the element.",Neutron:"No charge. Protons + neutrons = mass number. Neutron count sets the isotope.",Electron:"Negative charge; in orbitals (electron cloud). Neutral atom: e⁻ = p⁺. Sets the ion charge."};
+Object.keys(I).forEach(function(k){bar.appendChild(btn(k,"",function(){inf.innerHTML="<b class=r>"+k+":</b> "+I[k]}))});p.appendChild(bar);p.appendChild(inf)}
+function d1(p){var md="";function go(){p.innerHTML="<h3>Periodic table — tap an element</h3>";var bar=E("div","bar");
+[["","Classes"],["a","Alkali focus"],["b","Blocks"]].forEach(function(x){bar.appendChild(btn(x[1],md==x[0]?"on":"",function(){md=x[0];go()}))});p.appendChild(bar);
+var w=E("div","",pt(md)),inf=E("div","box","Tap any cell.");p.appendChild(w);p.appendChild(inf);
+w.querySelectorAll(".c").forEach(function(c){c.style.cursor="pointer";c.onclick=function(){var z=+c.querySelector("small").textContent,s=c.lastChild.textContent,k="",f=cfg(z);
+c.className.split(" ").forEach(function(t){if(CL[t]&&!k)k=CL[t]});
+inf.innerHTML="<b class=r>"+s+"</b> · Z = "+z+(NAMES[z]?" · "+NAMES[z]:"")+"<br>"+k+"<br>Config: "+f.sh+" · outer e⁻: "+f.v}})}go()}
+function d2(p){p.innerHTML="<h3>Electron configuration builder</h3><p>Atomic number: <b class=r id=zv>11</b></p><input type=range min=1 max=86 value=11 style='width:100%'><div id=zo></div>";
+var sl=p.querySelector("input");function up(){var z=+sl.value,f=cfg(z);p.querySelector("#zv").textContent=z;
+p.querySelector("#zo").innerHTML="<div class=box><b>Full:</b> "+f.full+"<br><b>Shorthand:</b> "+f.sh+"<br><b>Outer-shell electrons:</b> "+f.v+"</div><div class=orb>"+f.list.map(function(x){return "<span style='background:linear-gradient(90deg,var(--ac) "+(x[1]/x[2]*100)+"%,transparent 0)'>"+x[0]+"<sup>"+x[1]+"</sup></span>"}).join("")+"</div><p class=mu>Ideal Aufbau filling; exceptions (e.g. Cr, Cu) are not shown.</p>"}
+sl.oninput=up;up()}
+function d3(p){var Z=[3,11,19,37,55,87],S="Li Na K Rb Cs Fr".split(" "),F={3:"Lithium salts treat bipolar disorder; narrow therapeutic index.",11:"Main extracellular cation; fluid balance & nerve impulses.",19:"95% intracellular; plasma window 3.5–5.0 mmol/L."},t="<h3>Group 1 — tap a row</h3><table><tr><th>Z</th><th>Symbol</th><th>Configuration</th><th>Shorthand</th></tr>";
+Z.forEach(function(z,k){var f=cfg(z);t+="<tr class=rw data-k="+k+"><td>"+z+"</td><td><b>"+S[k]+"</b></td><td>"+f.full+"</td><td>"+f.sh+"</td></tr>"});
+p.innerHTML=t+"</table><div class=box>All have one outer s electron → lose it to form M⁺.</div>";
+p.querySelectorAll(".rw").forEach(function(r){r.onclick=function(){var k=+r.dataset.k;p.querySelector(".box").innerHTML="<b class=r>"+S[k]+":</b> "+(F[Z[k]]||"Group 1 s-block metal; very reactive, not covered clinically in this lecture.")}})}
+function d4(p){var c="Na";function go(){p.innerHTML="<h3>Bicarbonate &amp; citrate salts</h3>";var bar=E("div","bar");["Na","K"].forEach(function(x){bar.appendChild(btn(x+"⁺ salts",c==x?"on":"",function(){c=x;go()}))});
+p.appendChild(bar);p.appendChild(E("div","",bic(c)));p.appendChild(E("p","ctr","<b>"+c+"HCO₃</b> — bicarbonate is the active part"));p.appendChild(E("div","",cit(c)));p.appendChild(E("p","ctr","<b>"+c+"₃ citrate</b> — "+(c=="Na"?"used in oral rehydration":"raises urinary pH (mild UTI)")))}go()}
+function d5(p){var Z={Li:[["Below toxic level","#7bc47f","Therapeutic range (monitor)."],["Toxic effects","#f2a33a","Tremor, renal impairment, convulsions."],["Emergency","#d64545","Fatal — emergency treatment."]],K:[["Hypokalaemia","#4f8fe0","Muscle weakness, ECG abnormalities."],["Normal window","#7bc47f","3.5–5.0 mmol/L."],["Hyperkalaemia","#f2a33a","Raised plasma K⁺ — serious."],["Acute severe","#d64545","Cardiac arrest risk — urgent treatment."]]},B={Li:[1.5,2,3],K:[3.5,5,6.5,8]},sp="Li",v=1;
+function go(){var b=B[sp],mx=b[b.length-1],z=0;for(var k=0;k<b.length;k++)if(v>b[k])z=k+1;if(z>=Z[sp].length)z=Z[sp].length-1;
+p.innerHTML="<h3>Plasma level meter (mmol/L)</h3>";var bar=E("div","bar");["Li","K"].forEach(function(x){bar.appendChild(btn(x+"⁺",sp==x?"on":"",function(){sp=x;v=x=="Li"?1:4;go()}))});p.appendChild(bar);
+var g="",pr=0;b.forEach(function(e,k){g+="<i style='width:"+(e-pr)/mx*100+"%;background:"+Z[sp][k][1]+"'></i>";pr=e});
+p.appendChild(E("div","meter",g+"<u style='left:"+v/mx*100+"%'></u>"));var s=E("input");s.type="range";s.min=0;s.max=mx;s.step=0.1;s.value=v;s.style.width="100%";s.oninput=function(){v=+s.value;go()};p.appendChild(s);
+p.appendChild(E("div","box","<b class=r>"+v.toFixed(1)+" mmol/L — "+Z[sp][z][0]+"</b><br>"+Z[sp][z][2]))}go()}
+function d6(p){var R=[["Calcium gluconate (IV)","Minimises the effect of hyperkalaemia on the heart"],["Soluble insulin (IV)","Shifts K⁺ into the cells"],["Diuretics","Increase K⁺ secretion in the kidney"],["Dialysis","Urgent option to remove K⁺"],["Ion-exchange resins (polystyrene sulfonate)","Mild–moderate cases with no ECG changes"]];
+var t="<h3>Hyperkalaemia treatment — tap to reveal</h3><table><tr><th>Treatment</th><th>Role</th></tr>";R.forEach(function(r){t+="<tr class=rw><td><b>"+r[0]+"</b></td><td class=hid>"+r[1]+"</td></tr>"});p.innerHTML=t+"</table>";
+p.querySelectorAll(".rw").forEach(function(r){r.onclick=function(){r.lastChild.classList.toggle("hid")}})}
+var DGF=[d0,d1,d2,d3,d4,d5,d6];
+function vOv(nv,m){var p=E("div","pg","<h2>Overview</h2><p class=mu>Key rules and must-know topics — Inorganic Pharmaceutical Chemistry</p>"),g=E("div","cards");
+OV.forEach(function(x,k){x=x.split("|");g.appendChild(E("div","card c"+(k%4),"<b>"+x[0]+"</b><span>"+x[1]+"</span>"))});p.appendChild(g);m.appendChild(p)}
+function vDg(nv,m){subnav(nv,DG);var p=E("div","pg");m.appendChild(p);DGF[ST.i](p)}
+function vMm(nv,m){subnav(nv,MM.map(function(x){return x.split("|")[0]}));var x=MM[ST.i].split("|");m.appendChild(E("div","pg","<h2>"+x[0]+"</h2><p>"+x[1]+"</p>"))}
+function lvBar(p){var bar=E("div","bar");LVN.forEach(function(n,k){bar.appendChild(btn(n+" ("+FCL[k].length+")",k==ST.lv?"on":"",function(){ST.lv=k;FC=FCL[k].slice();ST.q=null;ST.fc=0;ST.fl=false;ST.qi=0;ST.sc=0;ST.ans=false;render()}))});p.insertBefore(bar,p.firstChild)}
+function vFc(nv,m){var c=FC[ST.fc],p=E("div","pg ctr"),d=E("div","fcard"+(ST.fl?" fl":""),"<small>Card "+(ST.fc+1)+" / "+FC.length+"</small><div>"+(ST.fl?c[1]:c[0])+"</div><small>"+(ST.fl?"Answer":"Tap to flip")+"</small>");
+d.onclick=function(){ST.fl=!ST.fl;render()};p.appendChild(d);lvBar(p);var b=E("div","bar");
+b.appendChild(btn("← Prev","",function(){ST.fc=(ST.fc+FC.length-1)%FC.length;ST.fl=false;render()}));b.appendChild(btn("🔀 Shuffle","",function(){FC=shuf(FC);ST.fc=0;ST.fl=false;render()}));b.appendChild(btn("Next →","",function(){ST.fc=(ST.fc+1)%FC.length;ST.fl=false;render()}));p.appendChild(b);m.appendChild(p)}
+function vQz(nv,m){var p=E("div","pg");m.appendChild(p);if(!ST.q)ST.q=shuf(QZL[ST.lv]);
+if(ST.qi>=ST.q.length){p.innerHTML="<h2>Result</h2><p style='font-size:22px'>Score: <b class=r>"+ST.sc+" / "+ST.q.length+"</b></p>";p.appendChild(btn("Restart","ac",function(){ST.q=shuf(QZL[ST.lv]);ST.qi=0;ST.sc=0;ST.ans=false;render()}));lvBar(p);return}
+var q=ST.q[ST.qi],o=shuf(q.slice(1)),L="ABCD";p.innerHTML="<p class=mu>Question "+(ST.qi+1)+" / "+ST.q.length+" · Score "+ST.sc+"</p><h3>"+q[0]+"</h3>";lvBar(p);
+var nx=btn(ST.qi==ST.q.length-1?"Finish":"Next →","ac",function(){ST.qi++;ST.ans=false;render()});nx.style.display="none";
+o.forEach(function(x,k){var b=E("button","opt",L[k]+". "+x);b.onclick=function(){if(ST.ans)return;ST.ans=true;var ok=x==q[1];if(ok)ST.sc++;
+p.querySelectorAll(".opt").forEach(function(y){if(y.textContent.slice(3)==q[1])y.classList.add("ok")});if(!ok)b.classList.add("no");nx.style.display="";};p.appendChild(b)});p.appendChild(E("div","bar")).appendChild(nx)}
+function vLc(nv,m,LL){subnav(nv,LL.map(function(x){return x.t}));var pg=E("div","pg");pg.innerHTML=LL[ST.i].h;pg.contentEditable=ST.ed;if(!ST.ed)tr(pg);
+var w=E("div",ST.ed?"edit":"");w.appendChild(pg);m.appendChild(w);var bar=E("div","bar");
+bar.appendChild(btn("← Prev","",function(){if(ST.i>0){ST.i--;render()}}));bar.appendChild(E("span","","Slide "+(ST.i+1)+" / "+LL.length));
+bar.appendChild(btn(ST.ed?"✓ Done editing":"✎ Edit page",ST.ed?"ac":"",function(){ST.ed=!ST.ed;render()}));bar.appendChild(btn("Next →","",function(){if(ST.i<LL.length-1){ST.i++;render()}}));m.appendChild(bar)}
+function render(){var tb=$("tabs");tb.innerHTML="";TABS.forEach(function(n,k){tb.appendChild(btn(n,k==ST.t?"on":"",function(){ST.t=k;ST.i=0;ST.ed=false;render()}))});
+var nv=$("nav"),m=$("main");nv.innerHTML="";m.innerHTML="";nv.style.display="none";[vOv,function(a,b){vLc(a,b,L)},vDg,vMm,vFc,vQz][ST.t](nv,m)}
+render();
+</script><footer>© 2026 Anmar Taha. All rights reserved. · Telegram: <a href="https://t.me/AnmarTaha" target="_blank" rel="noopener">@AnmarTaha</a> · Instagram: <a href="https://instagram.com/a.za18" target="_blank" rel="noopener">a.za18</a></footer></body></html>
